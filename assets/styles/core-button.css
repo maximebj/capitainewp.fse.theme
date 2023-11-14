@@ -1,0 +1,10 @@
+/* Style: Special */
+.wp-block-button.is-style-special .wp-element-button {
+  background-color: red;
+}
+
+/* Style: Big */ 
+.wp-block-button.is-style-big .wp-element-button {
+  font-size: 2rem;
+  padding: 2rem;
+}
