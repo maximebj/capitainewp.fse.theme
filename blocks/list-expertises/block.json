@@ -1,0 +1,13 @@
+{
+  "name": "wia/list-expertises",
+  "title": "Liste des expertises",
+  "description": "Affiche une liste textuelle des expertises du groupe.",
+  "style": ["file:./style.css"],
+  "editorStyle": ["file:./editor.css"],
+  "category": "custom",
+  "icon": "star-filled",
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "template.php"
+  }
+}

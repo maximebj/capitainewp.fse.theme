@@ -1,0 +1,3 @@
+.wp-block-image.is-style-rounded img {
+  border-radius: var(--wp--custom--radius--large);
+}

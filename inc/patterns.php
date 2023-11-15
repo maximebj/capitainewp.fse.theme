@@ -6,14 +6,14 @@ add_action( 'init', 'Wia\\registerPatternCategories' );
 
 function registerPatternCategories() {
   $categories = [
-    'sections' => [
-      'label' => "Sections",
-      'description' => "Des sections pleines largeur pour vos pages de contenus.",
+    'hero' => [
+      'label' => "Hero",
+      'description' => "Des sections d’accroche pour vos en-têtes de pages.",
     ],
-    'cta' => [
-      'label' => "Appels à l’action",
-      'description' => "Des compositions pour inciter l’internaute à cliquer.",
-    ]
+    'section' => [
+      'label' => "Sections",
+      'description' => "Des sections pour vos pages.",
+    ],
   ];
 
   foreach ($categories as $name => $category) {

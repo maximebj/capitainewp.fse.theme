@@ -1,0 +1,4 @@
+/* Style : rounded */ 
+.wp-block-group.is-style-rounded {
+  border-radius: var(--wp--custom--radius--large);
+}

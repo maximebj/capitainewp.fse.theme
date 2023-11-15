@@ -16,3 +16,9 @@ Text Domain: wia
 :root {
   font-size: 18px;
 }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}

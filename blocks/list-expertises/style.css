@@ -1,0 +1,22 @@
+.wp-block-list-expertises ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wp-block-list-expertises a {
+  display: flex;
+  gap: var(--wp--preset--spacing--x-small);
+  align-items: center;
+  padding-top: var(--wp--preset--spacing--x-small);
+  text-decoration: none;
+}
+
+.wp-block-list-expertises a:before {
+  display: block;
+  content: '';
+  flex-shrink: 0;
+  width: 42px;
+  height: 33px;
+  background-image: url('../../assets/img/link-arrow-3.svg');
+}  

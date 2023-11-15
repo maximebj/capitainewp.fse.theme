@@ -1,16 +1,13 @@
 /* Editor styles improvements */
-.edit-post-visual-editor__post-title-wrapper {
-  opacity: 0.5;
-  background-color:#e0e0e0;
-  margin-top: 0 !important;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .wp-block:hover {
   box-shadow: 0 0 0 1px purple;
 }
 
 .wp-block-group:hover {
   box-shadow: 0 0 0 1px chartreuse;
+}
+
+/* Buttons borders fix */
+.wp-block-button .wp-element-button {
+  border-width: 2px !important;
 }

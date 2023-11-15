@@ -1,0 +1,6 @@
+/* Style: Arrow */
+.wp-block-button.is-style-arrow .wp-element-button {
+  color: var(--wp--preset--color--primary);
+  background-color: transparent;
+  border-color: var(--wp--preset--color--primary);
+}

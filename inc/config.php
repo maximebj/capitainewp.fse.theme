@@ -3,6 +3,9 @@
 namespace Wia;
 
 add_action( 'wp_enqueue_scripts', 'Wia\\registerAssets' );
+add_filter( 'upload_mimes', 'Wia\\allowMimeTypes' );
+add_filter( 'wp_check_filetype_and_ext', 'Wia\\allowFileTypes', 10, 4 );
+add_filter( 'sanitize_file_name', 'remove_accents' );
 
 # Retirer le pattern directory et la suggestion de blocs
 remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
@@ -21,4 +24,20 @@ function registerAssets() {
 
   # Disable native blocks styles
   wp_dequeue_style( 'wp-block-columns' );
+}
+
+function allowMimeTypes($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  $mimes['webp'] = 'image/webp';
+    
+  return $mimes;
+}
+
+function allowFileTypes( $types, $file, $filename, $mimes ) {
+  if ( false !== strpos( $filename, '.webp' ) ) {
+    $types['ext'] = 'webp';
+    $types['type'] = 'image/webp';
+  }
+
+  return $types;
 }
