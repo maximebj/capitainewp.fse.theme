@@ -1,0 +1,38 @@
+{
+  "registerBlocksStyles": {
+    "core/buttons": {
+      "small": "Petits"
+    },
+    "core/button": {
+      "square": "Carré",
+      "shadow": "Ombré"
+    },
+    "core/group": {
+      "diagonal-separator": "Séparation diagonale"
+    }
+  },
+  "registerBlocksCategories": {
+    "capitaine": "Capitaine WP"
+  },
+  "registerPatternsCategories": {
+    "design": "Accroches",
+    "card": "Sections",
+    "marketing": "Marketing"
+  },
+  "deregisterBlocks": [
+    "core/preformatted",
+    "core/pullquote",
+    "core/quote",
+    "core/rss",
+    "core/search",
+    "core/verse",
+    "core/social-links",
+    "core/social-link"
+  ],
+  "deregisterStylesheets": ["core/columns"],
+  "deregisterBlocksStyles": {
+    "core/button": ["outline"],
+    "core/separator": ["dots", "wide"],
+    "core/image": ["rounded"]
+  }
+}
