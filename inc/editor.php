@@ -42,7 +42,7 @@ class SetupEditor
       wp_enqueue_block_style(
         $block_name,
         [
-          'handle' => "wia-{$filename}",
+          'handle' => "capitaine-{$filename}",
           'src'    => get_theme_file_uri("assets/css/{$filename}.css"),
           'path'   => get_theme_file_path("assets/css/{$filename}.css"),
           'ver'    => wp_get_environment_type() === 'local' ? filemtime($file) : null,
