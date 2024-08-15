@@ -1,0 +1,12 @@
+{
+    "settings": {
+        "custom": {
+            "radius": {
+                "small": "4px",
+                "medium": "10px",
+                "large": "20px",
+                "full": "999px"
+            }
+        }
+    }
+}

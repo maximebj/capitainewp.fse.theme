@@ -47,13 +47,22 @@ function capitaine_deregister_stylesheets()
     'columns',
     [
       'handle' => "capitaine-columns",
-      'src'    => get_theme_file_uri("css/columns.css"),
-      'path'   => get_theme_file_path("css/columns.css"),
-      'ver'    => wp_get_environment_type() === 'local' ? filemtime("css/columns.css") : null,
+      'src' => get_theme_file_uri("css/columns.css"),
+      'path' => get_theme_file_path("css/columns.css"),
+      'ver' => "1.0",
     ]
   );
 }
 add_action('wp_enqueue_scripts', 'capitaine_deregister_stylesheets');
+
+# Ajout de catégories de compositions personnalisées
+function capitaine_register_block_pattern_categories(): void
+{
+  register_block_pattern_category('cta', ['label' => "Call to action"]);
+  register_block_pattern_category('cards', ['label' => "Cards"]);
+  register_block_pattern_category('marketing', ['label' => "Marketing"]);
+}
+add_action('init', 'capitaine_register_block_pattern_categories');
 
 # Allow SVG and WebP uploads
 function capitaine_allow_mime($mimes)

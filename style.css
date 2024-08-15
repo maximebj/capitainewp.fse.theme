@@ -12,13 +12,3 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: capitaine
 */
-
-:root {
-  font-size: 18px;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}

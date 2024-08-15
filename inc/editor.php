@@ -146,6 +146,13 @@ class SetupEditor
   {
     $blocks_styles_to_disable = $this->getConfigData('deregisterBlocksStyles');
 
+    // Todo
+    $blocks_styles_to_disable = [
+      "core/button" => ["outline"],
+      "core/separator" => ["dots", "wide"],
+      "core/image" => ["rounded"]
+    ];
+
     # Load script 
     wp_enqueue_script(
       'unregister-styles',
