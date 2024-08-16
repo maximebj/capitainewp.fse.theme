@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "name": "Bleu foncé",
+                    "slug": "primary",
+                    "color": "#003049"
+                },
+                {
+                    "name": "Rouge",
+                    "slug": "secondary",
+                    "color": "#d62828"
+                },
+                {
+                    "name": "Orange",
+                    "slug": "accent",
+                    "color": "#f77f00"
+                },
+                {
+                    "name": "Jaune",
+                    "slug": "contrast",
+                    "color": "#fcbf49"
+                },
+                {
+                    "name": "Clair",
+                    "slug": "white",
+                    "color": "#eae2b7"
+                }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "Borel, sans-serif",
+                    "name": "Borel",
+                    "slug": "primary",
+                    "fontFace": [
+                        {
+                            "fontDisplay": "block",
+                            "fontFamily": "Borel",
+                            "fontStretch": "normal",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": ["file:./assets/fonts/borel-400.woff2"]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

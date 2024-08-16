@@ -1,0 +1,67 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "Borel, sans-serif",
+                    "name": "Borel",
+                    "slug": "primary",
+                    "fontFace": [
+                        {
+                            "fontDisplay": "block",
+                            "fontFamily": "Borel",
+                            "fontStretch": "normal",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": ["file:./assets/fonts/borel-400.woff2"]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "ACME, sans-serif",
+                    "name": "ACME",
+                    "slug": "secondary",
+                    "fontFace": [
+                        {
+                            "fontDisplay": "block",
+                            "fontFamily": "ACME",
+                            "fontStretch": "normal",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": ["file:./assets/fonts/acme-400.woff2"]
+                        }
+                    ]
+                }
+            ],
+            "fontSizes": [
+                {
+                    "name": "Petit",
+                    "slug": "small",
+                    "size": "0.8rem"
+                },
+                {
+                    "name": "Moyen",
+                    "slug": "medium",
+                    "size": "1.1rem"
+                },
+                {
+                    "name": "Grand",
+                    "slug": "large",
+                    "size": "2rem"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "elements": {
+            "h1": {
+                "typography": {
+                    "fontFamily": "ACME",
+                    "fontSize": "large"
+                }
+            }
+        }
+    }
+}
