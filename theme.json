@@ -246,7 +246,10 @@
                 "full": "999px"
             },
             "color": {
-                "secondary-hover": "#F4014E"
+                "secondary-hover": "#F4014E",
+                "secondary-alt": "#FE5D90",
+                "secondary-light": "#FE85AC",
+                "secondary-dark": "#790127"
             }
         },
         "blocks": {

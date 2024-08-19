@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "title": "Transparent",
+    "slug": "button-transparent",
+    "blockTypes": ["core/button"],
+    "styles": {
+        "color": {
+            "background": "transparent",
+            "text": "var(--wp--custom--color--secondary-dark)"
+        },
+        "border": {
+            "color": "var(--wp--custom--color--secondary-dark)",
+            "width": "2px",
+            "style": "solid"
+        },
+        "spacing": {
+            "padding": {
+                "top": "calc(var(--wp--preset--spacing--x-small) - 2px)",
+                "bottom": "calc(var(--wp--preset--spacing--x-small) - 2px)"
+            }
+        }
+    }
+}
