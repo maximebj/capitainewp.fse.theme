@@ -1,4 +1,105 @@
-/* Style : rounded */ 
+/* Style : rounded */
 .wp-block-group.is-style-rounded {
-  border-radius: var(--wp--custom--radius--large);
+    border-radius: var(--wp--custom--radius--large);
+}
+
+.wp-block-group.is-style-group-wave {
+    position: relative;
+}
+
+.wp-block-group.is-style-group-wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: inherit;
+
+    clip-path: polygon(
+        100% 0%,
+        0% 0%,
+        0% 100%,
+        2% 99.56%,
+        4% 98.24%,
+        6% 96.11%,
+        8% 93.22%,
+        10% 89.69%,
+        12% 85.64%,
+        14% 81.22%,
+        16% 76.57%,
+        18% 71.87%,
+        20% 67.27%,
+        22% 62.96%,
+        24% 59.06%,
+        26% 55.74%,
+        28% 53.09%,
+        30% 51.22%,
+        32% 50.2%,
+        34% 50.05%,
+        36% 50.79%,
+        38% 52.38%,
+        40% 54.77%,
+        42% 57.89%,
+        44% 61.6%,
+        46% 65.8%,
+        48% 70.32%,
+        50% 75%,
+        52% 79.68%,
+        54% 84.2%,
+        56% 88.4%,
+        58% 92.11%,
+        60% 95.23%,
+        62% 97.62%,
+        64% 99.21%,
+        66% 99.95%,
+        68% 99.8%,
+        70% 98.78%,
+        72% 96.91%,
+        74% 94.26%,
+        76% 90.94%,
+        78% 87.04%,
+        80% 82.73%,
+        82% 78.13%,
+        84% 73.43%,
+        86% 68.78%,
+        88% 64.36%,
+        90% 60.31%,
+        92% 56.78%,
+        94% 53.89%,
+        96% 51.76%,
+        98% 50.44%,
+        100% 50%
+    );
+}
+
+.wp-block-group.is-style-group-diagonal {
+    position: relative;
+}
+
+.wp-block-group.is-style-group-diagonal::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: inherit;
+
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.wp-block-group.is-style-group-diagonal::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: inherit;
+
+    clip-path: polygon(100% 0, 0 0, 0 100%);
 }
