@@ -8,6 +8,11 @@
         "color": {
             "background": "var(--wp--preset--color--primary)",
             "text": "var(--wp--preset--color--white)"
+        },
+        "spacing": {
+            "margin": {
+                "bottom": "var(--wp--preset--spacing--x-large)"
+            }
         }
     }
 }
