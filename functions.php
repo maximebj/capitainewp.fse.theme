@@ -23,26 +23,6 @@ function capitaine_register_assets()
 }
 add_action("wp_enqueue_scripts", "capitaine_register_assets");
 
-# On enregistre une variation de style de bloc personnalisée pour le bloc bouton
-function capitaine_register_block_styles()
-{
-    // register_block_style(
-    //   "core/button",
-    //   [
-    //     "name" => "primary-button",
-    //     "label" => __("Action", "capitainewp"),
-    //   ]
-    // );
-
-    // register_block_style(
-    //   "core/image",
-    //   [
-    //     "name" => "secondary-button",
-    //     "label" => __("Secondaire", "capitainewp"),
-    //   ]
-    // );
-}
-add_action("init", "capitaine_register_block_styles");
 
 # Charger les styles des variations de blocs
 function capitaine_register_blocks_assets()
@@ -79,13 +59,45 @@ function capitaine_deregister_stylesheets()
 add_action("wp_enqueue_scripts", "capitaine_deregister_stylesheets");
 
 # Ajout de catégories de compositions personnalisées
-function capitaine_register_block_pattern_categories(): void
+function capitaine_register_block_pattern_categories()
 {
     register_block_pattern_category("cta", ["label" => "Call to action"]);
     register_block_pattern_category("cards", ["label" => "Cards"]);
     register_block_pattern_category("marketing", ["label" => "Marketing"]);
 }
 add_action("init", "capitaine_register_block_pattern_categories");
+
+# Retirer les variations de styles de blocs natifs 
+function capitaine_deregister_blocks_styles()
+{
+    wp_enqueue_script(
+        "unregister-styles",
+        get_template_directory_uri() . "/assets/js/unregister-blocks-styles.js",
+        ["wp-blocks", "wp-dom-ready", "wp-edit-post"],
+        "1.0",
+    );
+}
+add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_styles");
+
+function capitaine_deregister_blocks($allowed_block_types, $editor_context)
+{
+    $blocks_to_disable = [
+        "core/preformatted",
+        "core/pullquote",
+        "core/quote",
+        "core/rss",
+        "core/search",
+        "core/verse",
+        "core/social-links",
+        "core/social-link"
+    ];
+    $active_blocks = array_keys(
+        WP_Block_Type_Registry::get_instance()->get_all_registered()
+    );
+
+    return array_values(array_diff($active_blocks, $blocks_to_disable));
+}
+add_filter("allowed_block_types_all", "capitaine_deregister_blocks", 10, 2);
 
 # Allow SVG and WebP uploads
 function capitaine_allow_mime($mimes)
@@ -128,7 +140,7 @@ class SetupEditor
     }
 
     # Auto register custom blocks from blocks/* 
-    public function registerCustomBlocks(): void
+    public function registerCustomBlocks()
     {
         $folders = glob(get_template_directory() . '/blocks/*/');
 
@@ -139,7 +151,7 @@ class SetupEditor
     }
 
     # Auto load blocks styles from assets/css/*
-    public function registerBlocksAssets(): void
+    public function registerBlocksAssets()
     {
         $files = glob(get_template_directory() . '/assets/css/*.css');
 
@@ -160,7 +172,7 @@ class SetupEditor
     }
 
     # Load editor custom configuration and register configurations
-    public function setupEditorConfig(): void
+    public function setupEditorConfig()
     {
         # Load editor JSON configuration file
         $this->config = $this->loadJsonConfig();
@@ -194,7 +206,7 @@ class SetupEditor
     }
 
     # Register new block styles variations
-    function registerBlocksStyles(): void
+    function registerBlocksStyles()
     {
         $block_styles = $this->getConfigData('registerBlocksStyles');
 
@@ -231,7 +243,7 @@ class SetupEditor
     }
 
     # Register new block patterns categories
-    public function registerPatternsCategories(): void
+    public function registerPatternsCategories()
     {
         $patterns = $this->getConfigData('registerPatternsCategories');
         foreach ($patterns as $name => $label) {
@@ -240,44 +252,8 @@ class SetupEditor
         }
     }
 
-    # Deregister unwanted blocks from editor inserter
-    public function deregisterBlocks(): array
-    {
-        $blocks_to_disable = $this->getConfigData('deregisterBlocks');
-        $blocks = array_keys(\WP_Block_Type_Registry::get_instance()->get_all_registered());
-
-        return array_values(array_diff($blocks, $blocks_to_disable));
-    }
-
-    # Deregister unwanted defaults blocks styles
-    public function deregisterBlocksStyles(): void
-    {
-        $blocks_styles_to_disable = $this->getConfigData('deregisterBlocksStyles');
-
-        // Todo
-        $blocks_styles_to_disable = [
-            "core/button" => ["outline"],
-            "core/separator" => ["dots", "wide"],
-            "core/image" => ["rounded"]
-        ];
-
-        # Load script 
-        wp_enqueue_script(
-            'unregister-styles',
-            get_template_directory_uri() . '/assets/js/unregister-blocks-styles.js',
-            ['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
-            '1.0',
-        );
-
-        # Create JS object to iterate
-        $inline_js = "var disableBlocksStyles = " . json_encode($blocks_styles_to_disable) . ";\n";
-
-        # Inline script before
-        wp_add_inline_script('unregister-styles', $inline_js, 'before');
-    }
-
     # Deregister unwanted blocks stylesheets in order to register custom ones
-    public function deregisterStylesheets(): void
+    public function deregisterStylesheets()
     {
         $blocks_stylesheets_to_disable = $this->getConfigData('deregisterStylesheets');
 

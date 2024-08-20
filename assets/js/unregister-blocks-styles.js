@@ -1,7 +1,8 @@
 wp.domReady(function () {
-  for (var block in disableBlocksStyles) {
-    disableBlocksStyles[block].forEach(style => {
-      wp.blocks.unregisterBlockStyle(block, style);
-    });
-  }
+    wp.blocks.unregisterBlockStyle("core/button", "outline");
+
+    wp.blocks.unregisterBlockStyle("core/separator", "dots");
+    wp.blocks.unregisterBlockStyle("core/separator", "wide");
+
+    wp.blocks.unregisterBlockStyle("core/image", "rounded");
 });
