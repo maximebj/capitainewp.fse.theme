@@ -6,8 +6,8 @@
     "blockTypes": ["core/button"],
     "styles": {
         "color": {
-            "background": "var(--wp--custom--color--secondary-alt)",
-            "text": "var(--wp--preset--color--white)"
+            "background": "var:custom|color|secondary-alt",
+            "text": "var:preset|color|white"
         }
     }
 }

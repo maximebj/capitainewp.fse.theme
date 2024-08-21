@@ -8,8 +8,6 @@ remove_action("enqueue_block_editor_assets", "wp_enqueue_editor_block_directory_
 remove_theme_support("core-block-patterns");
 
 # Ajouter des fonctionnalités
-add_theme_support("title-tag");
-add_theme_support("post-thumbnails");
 add_theme_support("editor-styles");
 
 # Déclarer les scripts et les styles

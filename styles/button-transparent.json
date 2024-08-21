@@ -7,10 +7,10 @@
     "styles": {
         "color": {
             "background": "transparent",
-            "text": "var(--wp--custom--color--secondary-dark)"
+            "text": "var:custom|color|secondary-dark"
         },
         "border": {
-            "color": "var(--wp--custom--color--secondary-dark)",
+            "color": "var:custom|color|secondary-dark",
             "width": "2px",
             "style": "solid"
         },

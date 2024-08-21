@@ -34,8 +34,8 @@
     },
     "styles": {
         "color": {
-            "text": "var(--wp--preset--color--contrast)",
-            "background": "var(--wp--preset--color--accent)"
+            "text": "var:preset|color|contrast",
+            "background": "var:preset|color|accent"
         }
     }
 }
