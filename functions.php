@@ -86,8 +86,6 @@ function capitaine_deregister_blocks($allowed_block_types, $editor_context)
         "core/rss",
         "core/search",
         "core/verse",
-        "core/social-links",
-        "core/social-link"
     ];
     $active_blocks = array_keys(
         WP_Block_Type_Registry::get_instance()->get_all_registered()

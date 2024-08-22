@@ -8,7 +8,7 @@
             "contentSize": "760px",
             "wideSize": "1140px",
             "allowCustomContentAndWideSize": false,
-            "allowEditing": false
+            "allowEditing": true
         },
         "color": {
             "text": true,
