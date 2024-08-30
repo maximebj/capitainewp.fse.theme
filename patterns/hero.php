@@ -17,11 +17,11 @@
 <div class="wp-block-group alignwide is-style-rounded has-white-color has-primary-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0","left":"var:preset|spacing|large"}}}} -->
   <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
     <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
-      <p class="has-secondary-color has-text-color has-link-color">Besoin d'un site Internet&nbsp;?</p>
+      <p class="has-secondary-color has-text-color has-link-color"><?php echo esc_html_x("Besoin d’un site Internet&nbsp;?", "Titre de la compositions", "capitaine"); ?></p>
       <!-- /wp:paragraph -->
 
       <!-- wp:heading -->
-      <h2 class="wp-block-heading">Capitaine <img class="wp-image-394" style="width: 40px;" src="http://full-site-editing.local/wp-content/uploads/2024/08/wp-logo.png" alt=""><br>l‘agence <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">WordPress</mark>.</h2>
+      <h2 class="wp-block-heading">Capitaine <img class="wp-image-394" style="width: 40px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/wp-logo.png" alt=""><br>l‘agence <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">WordPress</mark>.</h2>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph -->
@@ -65,16 +65,16 @@
 
     <!-- wp:column {"width":"45%"} -->
     <div class="wp-block-column" style="flex-basis:45%"><!-- wp:image {"id":388,"aspectRatio":"4/3","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-      <figure class="wp-block-image size-large"><img src="http://full-site-editing.local/wp-content/uploads/2024/08/austin-distel-wD1LRb9OeEo-unsplash-1024x768.jpg" alt="" class="wp-image-388" style="aspect-ratio:4/3;object-fit:cover" /></figure>
+      <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/austin-distel-wD1LRb9OeEo-unsplash-1536x1152.jpg" alt="" class="wp-image-388" style="aspect-ratio:4/3;object-fit:cover" /></figure>
       <!-- /wp:image -->
 
       <!-- wp:gallery {"linkTo":"none"} -->
       <figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":390,"sizeSlug":"large","linkDestination":"none"} -->
-        <figure class="wp-block-image size-large"><img src="http://full-site-editing.local/wp-content/uploads/2024/08/tim-van-der-kuip-CPs2X8JYmS8-unsplash-1024x683.jpg" alt="" class="wp-image-390" /></figure>
+        <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/tim-van-der-kuip-CPs2X8JYmS8-unsplash-1024x683.jpg" alt="" class="wp-image-390" /></figure>
         <!-- /wp:image -->
 
         <!-- wp:image {"id":389,"sizeSlug":"large","linkDestination":"none"} -->
-        <figure class="wp-block-image size-large"><img src="http://full-site-editing.local/wp-content/uploads/2024/08/lycs-architecture-U2BI3GMnSSE-unsplash-1024x683.jpg" alt="" class="wp-image-389" /></figure>
+        <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lycs-architecture-U2BI3GMnSSE-unsplash-1024x683.jpg" alt="" class="wp-image-389" /></figure>
         <!-- /wp:image -->
       </figure>
       <!-- /wp:gallery -->
