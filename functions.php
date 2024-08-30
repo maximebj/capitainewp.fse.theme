@@ -95,6 +95,26 @@ function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 }
 add_filter("allowed_block_types_all", "capitaine_deregister_blocks", 10, 2);
 
+# Ajouter des catégories de compositions personnalisées
+function register_patterns_categories()
+{
+    register_block_pattern_category(
+        "marketing",
+        ["label" => __("Marketing", "capitaine")]
+    );
+
+    register_block_pattern_category(
+        "cards",
+        ["label" => __("Cartes", "capitaine")]
+    );
+
+    register_block_pattern_category(
+        "hero",
+        ["label" => __("Hero", "capitaine")]
+    );
+}
+add_filter("init", "register_patterns_categories");
+
 # Allow SVG and WebP uploads
 function capitaine_allow_mime($mimes)
 {
