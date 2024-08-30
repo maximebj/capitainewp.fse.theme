@@ -4,7 +4,7 @@
  * Title: Hero
  * Slug: hero
  * Description: Ma toute première composition
- * Categories: card
+ * Categories: cards, marketing, hero
  * Keywords: 
  * Viewport Width: 1200
  * Block Types:
