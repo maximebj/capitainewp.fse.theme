@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Title: Hero
- * Slug: hero
- * Description: Ma toute première composition
+ * Title: Présentation
+ * Slug: card-presentation
+ * Description: Carte de présentation de l'agence
  * Categories: cards, marketing, hero
  * Keywords: 
  * Viewport Width: 1200

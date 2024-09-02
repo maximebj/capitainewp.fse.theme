@@ -82,6 +82,11 @@
                     "name": "Blanc",
                     "slug": "white",
                     "color": "#FFFFFF"
+                },
+                {
+                    "name": "Gris",
+                    "slug": "gray",
+                    "color": "#F9F7F3"
                 }
             ]
         },

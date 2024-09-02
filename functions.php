@@ -112,6 +112,11 @@ function register_patterns_categories()
         "hero",
         ["label" => __("Hero", "capitaine")]
     );
+
+    register_block_pattern_category(
+        "posts",
+        ["label" => __("Publications", "capitaine")]
+    );
 }
 add_filter("init", "register_patterns_categories");
 
