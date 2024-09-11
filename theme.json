@@ -141,19 +141,37 @@
             "writingMode": false,
             "fontFamilies": [
                 {
-                    "fontFamily": "Open Sans, sans-serif",
+                    "fontFamily": "'Open Sans', sans-serif",
                     "name": "Open Sans",
                     "slug": "primary",
                     "fontFace": [
                         {
-                            "fontDisplay": "block",
                             "fontFamily": "Open Sans",
                             "fontStretch": "normal",
                             "fontStyle": "normal",
                             "fontWeight": "400",
-                            "src": [
-                                "file:./assets/fonts/open-sans-v36-latin-regular.woff2"
-                            ]
+                            "src": ["file:./assets/fonts/open-sans-400.woff2"]
+                        },
+                        {
+                            "fontFamily": "Open Sans",
+                            "fontStretch": "normal",
+                            "fontStyle": "normal",
+                            "fontWeight": "700",
+                            "src": ["file:./assets/fonts/open-sans-700.woff2"]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "'Work Sans', sans-serif",
+                    "name": "Work Sans",
+                    "slug": "secondary",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Work Sans",
+                            "fontStretch": "normal",
+                            "fontStyle": "normal",
+                            "fontWeight": "800",
+                            "src": ["file:./assets/fonts/work-sans-800.woff2"]
                         }
                     ]
                 }
@@ -232,8 +250,9 @@
         "custom": {
             "fontWeight": {
                 "regular": 400,
-                "semi-bold": 600,
-                "bold": 700
+                "semibold": 600,
+                "bold": 700,
+                "extrabold": 800
             },
             "lineHeight": {
                 "narrow": 1.2,
@@ -247,10 +266,10 @@
                 "full": "999px"
             },
             "color": {
-                "secondary-hover": "#F4014E",
-                "secondary-alt": "#FE5D90",
-                "secondary-light": "#FE85AC",
-                "secondary-dark": "#790127"
+                "secondaryHover": "#F4014E",
+                "secondaryAlt": "#FE5D90",
+                "secondaryLight": "#FE85AC",
+                "secondaryDark": "#790127"
             }
         },
         "blocks": {
@@ -267,12 +286,6 @@
                 "lightbox": {
                     "enabled": true,
                     "allowEditing": true
-                }
-            },
-            "core/gallery": {
-                "lightbox": {
-                    "enabled": false,
-                    "allowEditing": false
                 }
             }
         }
@@ -326,10 +339,16 @@
                     }
                 }
             },
+            "heading": {
+                "typography": {
+                    "fontFamily": "var:preset|font-family|secondary",
+                    "fontWeight": "var:custom|font-weight|extrabold",
+                    "lineHeight": "var:custom|line-height|thight"
+                }
+            },
             "h1": {
                 "typography": {
-                    "fontSize": "var:preset|font-size|xx-large",
-                    "fontWeight": "var:custom|font-weight|semi-bold"
+                    "fontSize": "var:preset|font-size|xx-large"
                 },
                 "spacing": {
                     "margin": {
@@ -339,20 +358,17 @@
             },
             "h2": {
                 "typography": {
-                    "fontSize": "var:preset|font-size|x-large",
-                    "fontWeight": "var:custom|font-weight|semi-bold"
+                    "fontSize": "var:preset|font-size|x-large"
                 }
             },
             "h3": {
                 "typography": {
-                    "fontSize": "var:preset|font-size|large",
-                    "fontWeight": "var:custom|font-weight|semi-bold"
+                    "fontSize": "var:preset|font-size|large"
                 }
             },
             "h4": {
                 "typography": {
-                    "fontSize": "var:preset|font-size|medium",
-                    "fontWeight": "var:custom|font-weight|semi-bold"
+                    "fontSize": "var:preset|font-size|medium"
                 }
             },
             "h5": {
@@ -363,13 +379,6 @@
             "h6": {
                 "typography": {
                     "fontSize": "var:preset|font-size|small"
-                }
-            },
-            "heading": {
-                "typography": {
-                    "fontFamily": "var:preset|font-family|primary",
-                    "fontWeight": "var:custom|font-weight|regular",
-                    "lineHeight": "var:custom|line-height|thight"
                 }
             },
             "link": {

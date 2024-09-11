@@ -21,7 +21,7 @@
       <!-- /wp:paragraph -->
 
       <!-- wp:heading -->
-      <h2 class="wp-block-heading">Capitaine <img class="wp-image-394" style="width: 40px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/wp-logo.png" alt=""><br>l‘agence <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">WordPress</mark>.</h2>
+      <h2 class="wp-block-heading">Capitaine <img class="wp-image-394" style="width: 40px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/wp-logo.png" alt=""><br>l’agence <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">WordPress</mark>.</h2>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph -->
