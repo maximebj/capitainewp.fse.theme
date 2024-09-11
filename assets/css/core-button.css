@@ -1,17 +1,7 @@
-.wp-block-button .wp-element-button {
-  border: 2px solid transparent;
-}
-
-/* Style: Contour */
-.wp-block-button.is-style-border .wp-element-button {
-  color: var(--wp--preset--color--primary);
-  background-color: transparent;
-  border-color: var(--wp--preset--color--primary);
-}
-
-
 /* Style: Contour in Group purple */
-.wp-block-group.has-primary-background-color .wp-block-button.is-style-border .wp-element-button {
-  color: var(--wp--preset--color--accent);
-  border-color: var(--wp--preset--color--accent);
+.wp-block-group.has-primary-background-color
+    .wp-block-button.is-style-border
+    .wp-element-button {
+    color: var(--wp--preset--color--accent);
+    border-color: var(--wp--preset--color--accent);
 }
