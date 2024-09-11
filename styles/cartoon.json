@@ -38,17 +38,17 @@
             "fontSizes": [
                 {
                     "name": "Petit",
-                    "slug": "small",
+                    "slug": "s",
                     "size": "0.8rem"
                 },
                 {
                     "name": "Moyen",
-                    "slug": "medium",
+                    "slug": "m",
                     "size": "1.1rem"
                 },
                 {
                     "name": "Grand",
-                    "slug": "large",
+                    "slug": "l",
                     "size": "2rem"
                 }
             ]
