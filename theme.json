@@ -184,7 +184,7 @@
                 },
                 {
                     "name": "Moyen",
-                    "size": "1rem",
+                    "size": "1.125rem",
                     "slug": "m"
                 },
                 {
@@ -301,7 +301,7 @@
         },
         "typography": {
             "fontFamily": "var:preset|font-family|primary",
-            "fontSize": "var:preset|font-size|s",
+            "fontSize": "var:preset|font-size|m",
             "fontWeight": "var:custom|font-weight|regular",
             "lineHeight": "var:custom|line-height|regular"
         },
@@ -325,7 +325,7 @@
                 },
                 "typography": {
                     "fontSize": "var:preset|font-size|m",
-                    "fontWeight": "var:custom|font-weight|bold"
+                    "fontWeight": "var:custom|font-weight|regular"
                 },
                 ":hover": {
                     "color": {
@@ -411,7 +411,7 @@
             },
             "core/buttons": {
                 "spacing": {
-                    "blockGap": "var:preset|spacing|small"
+                    "blockGap": "var:preset|spacing|s"
                 }
             }
         }

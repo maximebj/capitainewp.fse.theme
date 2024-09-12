@@ -10,9 +10,13 @@
             "text": "var:preset|color|white"
         },
         "spacing": {
+            "padding": {
+                "top": "var:preset|spacing|l",
+                "bottom": "var:preset|spacing|l"
+            },
             "margin": {
-                "top": "var:preset|spacing|xl",
-                "bottom": "var:preset|spacing|xl"
+                "top": "var:preset|spacing|l",
+                "bottom": "var:preset|spacing|l"
             }
         }
     }

@@ -1,31 +1,5 @@
 .wp-block-group.is-style-diagonal {
-    position: relative;
-}
-
-.wp-block-group.is-style-diagonal::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: calc(100% - 1px);
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: inherit;
-
-    clip-path: polygon(100% 100%, 0 100%, 100% 0);
-}
-
-.wp-block-group.is-style-diagonal::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: calc(100% - 1px);
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: inherit;
-
-    clip-path: polygon(100% 0, 0 0, 0 100%);
+    clip-path: polygon(0 50px, 100% 0%, 100% calc(100% - 50px), 0% 100%);
 }
 
 .wp-block-group.is-style-wave {
