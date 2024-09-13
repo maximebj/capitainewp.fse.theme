@@ -66,7 +66,7 @@ function capitaine_register_block_pattern_categories()
 add_action("init", "capitaine_register_block_pattern_categories");
 
 # Retirer les variations de styles de blocs natifs 
-function capitaine_deregister_blocks_styles()
+function capitaine_deregister_blocks_variations()
 {
     wp_enqueue_script(
         "unregister-styles",
@@ -75,7 +75,7 @@ function capitaine_deregister_blocks_styles()
         "1.0",
     );
 }
-add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_styles");
+add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_variations");
 
 function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 {
