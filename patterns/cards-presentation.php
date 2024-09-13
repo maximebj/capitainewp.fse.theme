@@ -2,7 +2,7 @@
 
 /**
  * Title: Présentation
- * Slug: card-presentation
+ * Slug: cards-presentation
  * Description: Carte de présentation de l'agence
  * Categories: cards, marketing, hero
  * Keywords: 
@@ -21,7 +21,7 @@
       <!-- /wp:paragraph -->
 
       <!-- wp:heading -->
-      <h2 class="wp-block-heading">Capitaine <img class="wp-image-394" style="width: 40px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/wp-logo.png" alt=""><br>l’agence <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">WordPress</mark>.</h2>
+      <h2 class="wp-block-heading">Capitaine <img style="width: 40px;" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/wp-logo.png" alt=""><br>l’agence <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">WordPress</mark>.</h2>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph -->
@@ -65,16 +65,16 @@
 
     <!-- wp:column {"width":"45%"} -->
     <div class="wp-block-column" style="flex-basis:45%"><!-- wp:image {"id":388,"aspectRatio":"4/3","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-      <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/austin-distel-wD1LRb9OeEo-unsplash-1536x1152.jpg" alt="" class="wp-image-388" style="aspect-ratio:4/3;object-fit:cover" /></figure>
+      <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/austin-distel-wD1LRb9OeEo-unsplash-1536x1152.jpg" alt="" style="aspect-ratio:4/3;object-fit:cover" /></figure>
       <!-- /wp:image -->
 
       <!-- wp:gallery {"linkTo":"none"} -->
       <figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":390,"sizeSlug":"large","linkDestination":"none"} -->
-        <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/tim-van-der-kuip-CPs2X8JYmS8-unsplash-1024x683.jpg" alt="" class="wp-image-390" /></figure>
+        <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/tim-van-der-kuip-CPs2X8JYmS8-unsplash-1024x683.jpg" alt="" /></figure>
         <!-- /wp:image -->
 
         <!-- wp:image {"id":389,"sizeSlug":"large","linkDestination":"none"} -->
-        <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lycs-architecture-U2BI3GMnSSE-unsplash-1024x683.jpg" alt="" class="wp-image-389" /></figure>
+        <figure class="wp-block-image size-large"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lycs-architecture-U2BI3GMnSSE-unsplash-1024x683.jpg" alt="" /></figure>
         <!-- /wp:image -->
       </figure>
       <!-- /wp:gallery -->
