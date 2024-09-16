@@ -1,0 +1,16 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "title": "Arrondi",
+    "slug": "rounded",
+    "blockTypes": ["core/gallery"],
+    "styles": {
+        "blocks": {
+            "core/image": {
+                "border": {
+                    "radius": "var:custom|radius|m"
+                }
+            }
+        }
+    }
+}
