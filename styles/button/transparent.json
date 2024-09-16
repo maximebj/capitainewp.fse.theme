@@ -10,7 +10,7 @@
             "text": "var:custom|color|secondary-dark"
         },
         "border": {
-            "color": "var:custom|color|secondary-dark",
+            "color": "currentColor",
             "width": "2px",
             "style": "solid"
         },
