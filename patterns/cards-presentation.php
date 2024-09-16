@@ -63,12 +63,12 @@
         <!-- /wp:column -->
 
         <!-- wp:column {"width":"45%"} -->
-        <div class="wp-block-column" style="flex-basis:45%"><!-- wp:image {"id":388,"aspectRatio":"4/3","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-            <figure class="wp-block-image size-large"><img src="http://full-site-editing.local/wp-content/themes/capitainewp-fse/assets/img/austin-distel-wD1LRb9OeEo-unsplash-1536x1152.jpg" alt="" class="wp-image-388" style="aspect-ratio:4/3;object-fit:cover" /></figure>
+        <div class="wp-block-column" style="flex-basis:45%"><!-- wp:image {"id":388,"aspectRatio":"4/3","scale":"cover","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+            <figure class="wp-block-image size-large is-style-rounded"><img src="http://full-site-editing.local/wp-content/themes/capitainewp-fse/assets/img/austin-distel-wD1LRb9OeEo-unsplash-1536x1152.jpg" alt="" class="wp-image-388" style="aspect-ratio:4/3;object-fit:cover" /></figure>
             <!-- /wp:image -->
 
-            <!-- wp:gallery {"linkTo":"none"} -->
-            <figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":390,"className":"size-large"} -->
+            <!-- wp:gallery {"linkTo":"none","className":"is-style-rounded"} -->
+            <figure class="wp-block-gallery has-nested-images columns-default is-cropped is-style-rounded"><!-- wp:image {"id":390,"className":"size-large"} -->
                 <figure class="wp-block-image size-large"><img src="http://full-site-editing.local/wp-content/themes/capitainewp-fse/assets/img/tim-van-der-kuip-CPs2X8JYmS8-unsplash-1024x683.jpg" alt="" class="wp-image-390" /></figure>
                 <!-- /wp:image -->
 
