@@ -200,7 +200,11 @@
                 {
                     "name": "Énorme",
                     "size": "4rem",
-                    "slug": "xxl"
+                    "slug": "xxl",
+                    "fluid": {
+                        "min": "2rem",
+                        "max": "4rem"
+                    }
                 }
             ]
         },
@@ -212,7 +216,7 @@
         },
         "background": {
             "backgroundImage": true,
-            "backgroundSize": true
+            "backgroundSize": false
         },
         "shadow": {
             "defaultPresets": true,
@@ -269,10 +273,6 @@
         },
         "blocks": {
             "core/group": {
-                "background": {
-                    "backgroundImage": true,
-                    "backgroundSize": true
-                },
                 "color": {
                     "background": true
                 }
