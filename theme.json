@@ -392,7 +392,6 @@
         },
         "blocks": {
             "core/image": {
-                "shadow": "var:preset|shadow|neat",
                 "border": {
                     "radius": "var:custom|radius|medium"
                 }
