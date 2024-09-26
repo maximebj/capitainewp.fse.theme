@@ -84,7 +84,6 @@ function capitaine_deregister_blocks($allowed_block_types, $editor_context)
         "core/pullquote",
         "core/quote",
         "core/rss",
-        "core/search",
         "core/verse",
     ];
     $active_blocks = array_keys(
