@@ -76,7 +76,7 @@
                 {
                     "name": "Gris",
                     "slug": "contrast",
-                    "color": "#5F4D6F"
+                    "color": "#725C84"
                 },
                 {
                     "name": "Blanc",
@@ -420,6 +420,11 @@
             "area": "header",
             "name": "header",
             "title": "Header"
+        },
+        {
+            "area": "header",
+            "name": "header-marketing",
+            "title": "Header Minimaliste"
         },
         {
             "area": "footer",
