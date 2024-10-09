@@ -430,6 +430,11 @@
             "area": "footer",
             "name": "footer",
             "title": "Footer"
+        },
+        {
+            "area": "",
+            "name": "newsletter",
+            "title": "Inscription à la newsletter"
         }
     ]
 }
