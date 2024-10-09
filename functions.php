@@ -95,7 +95,7 @@ function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 add_filter("allowed_block_types_all", "capitaine_deregister_blocks", 10, 2);
 
 # Ajouter des catégories de compositions personnalisées
-function register_patterns_categories()
+function capitaine_register_patterns_categories()
 {
     register_block_pattern_category(
         "marketing",
@@ -117,7 +117,7 @@ function register_patterns_categories()
         ["label" => __("Publications", "capitaine")]
     );
 }
-add_filter("init", "register_patterns_categories");
+add_filter("init", "capitaine_register_patterns_categories");
 
 # Allow SVG and WebP uploads
 function capitaine_allow_mime($mimes)
@@ -140,6 +140,23 @@ function capitaine_allow_file_types($types, $file, $filename, $mimes)
     return $types;
 }
 add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
+
+# Add a Google verification code in <head>
+function capitaine_add_google_site_verification()
+{
+    echo '<meta name="google-site-verification" content="12345" />';
+}
+add_action('wp_head', 'capitaine_add_google_site_verification');
+
+# Add a custom class to the <body>
+function capitaine_body_class($classes)
+{
+    $classes[] = 'capitainewp';
+    return $classes;
+}
+add_filter('body_class', 'capitaine_body_class');
+
+# Add a div at the beginning of the content (with bbody open)
 
 
 // TODO REMOVE
