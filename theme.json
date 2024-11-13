@@ -412,6 +412,13 @@
                 "spacing": {
                     "blockGap": "var:preset|spacing|s"
                 }
+            },
+            "core/template-part": {
+                "spacing": {
+                    "margin": {
+                        "top": "0"
+                    }
+                }
             }
         }
     },
@@ -435,6 +442,13 @@
             "area": "",
             "name": "newsletter",
             "title": "Inscription à la newsletter"
+        }
+    ],
+    "customTemplates": [
+        {
+            "name": "page-full-width",
+            "title": "Page pleine largeur, sans titre",
+            "postTypes": ["page"]
         }
     ]
 }
