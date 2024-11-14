@@ -1,6 +1,6 @@
 <!-- wp:template-part {"slug":"header","theme":"capitainewp-fse","area":"header"} /-->
 
-<!-- wp:group {"tagName":"main","metadata":{"categories":["posts"],"patternName":"posts-list","name":"Liste verticale des articles"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|l","bottom":"var:preset|spacing|l"}}},"backgroundColor":"gray","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"main","metadata":{"categories":["posts"],"patternName":"posts-list","name":"Liste verticale des articles"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|l","bottom":"var:preset|spacing|l"},"blockGap":"var:preset|spacing|m"}},"backgroundColor":"gray","layout":{"type":"constrained"}} -->
 <main
     class="wp-block-group alignfull has-gray-background-color has-background"
     style="
@@ -8,16 +8,48 @@
         padding-bottom: var(--wp--preset--spacing--l);
     "
 >
-    <!-- wp:heading {"textAlign":"center","level":1,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|l"}}}} -->
+    <!-- wp:heading {"textAlign":"center","level":1,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
     <h1
         class="wp-block-heading has-text-align-center"
-        style="margin-top: 0; margin-bottom: var(--wp--preset--spacing--l)"
+        style="margin-top: 0; margin-bottom: 0"
     >
         Mes dernières actualités
     </h1>
     <!-- /wp:heading -->
 
-    <!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"default"}} -->
+    <!-- wp:query {"queryId":6,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template {"style":{"spacing":{"blockGap":"0"}}} -->
+        <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":{"topLeft":"20px","topRight":"20px","bottomLeft":"0px","bottomRight":"0px"}},"spacing":{"margin":{"top":"0","bottom":"0"}}}} /-->
+
+        <!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"right":"var:preset|spacing|s","left":"var:preset|spacing|s","top":"var:preset|spacing|xs","bottom":"var:preset|spacing|xs"},"blockGap":"0"},"border":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"20px","bottomRight":"20px"}}},"backgroundColor":"white","layout":{"type":"constrained"}} -->
+        <div
+            class="wp-block-group has-white-background-color has-background"
+            style="
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: var(--wp--preset--spacing--xs);
+                padding-right: var(--wp--preset--spacing--s);
+                padding-bottom: var(--wp--preset--spacing--xs);
+                padding-left: var(--wp--preset--spacing--s);
+            "
+        >
+            <!-- wp:post-title {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"}}},"fontSize":"xl"} /-->
+
+            <!-- wp:post-date {"style":{"spacing":{"padding":{"right":"0","left":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"s"} /-->
+
+            <!-- wp:post-excerpt {"moreText":"Lire l'article","style":{"spacing":{"margin":{"right":"0","left":"0"},"padding":{"right":"0","left":"0","top":"0","bottom":"0"}}}} /-->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
+    </div>
+    <!-- /wp:query -->
+
+    <!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":"1","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"layout":{"type":"default"}} -->
     <div class="wp-block-query">
         <!-- wp:post-template {"layout":{"type":"default","columnCount":2}} -->
         <!-- wp:media-text {"mediaType":"image","imageFill":true,"useFeaturedImage":true,"backgroundColor":"white"} -->
