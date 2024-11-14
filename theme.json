@@ -170,8 +170,10 @@
                             "fontFamily": "Work Sans",
                             "fontStretch": "normal",
                             "fontStyle": "normal",
-                            "fontWeight": "800",
-                            "src": ["file:./assets/fonts/work-sans-800.woff2"]
+                            "fontWeight": "300 900",
+                            "src": [
+                                "file:./assets/fonts/work-sans-variable.woff2"
+                            ]
                         }
                     ]
                 }
