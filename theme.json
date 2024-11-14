@@ -406,7 +406,7 @@
             "core/group": {
                 "spacing": {
                     "margin": {
-                        "top": "0"
+                        "top": "0 !important"
                     }
                 }
             },
@@ -418,7 +418,7 @@
             "core/template-part": {
                 "spacing": {
                     "margin": {
-                        "top": "0"
+                        "top": "0 !important"
                     }
                 }
             }
