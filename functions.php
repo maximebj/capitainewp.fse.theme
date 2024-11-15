@@ -156,7 +156,18 @@ function capitaine_body_class($classes)
 }
 add_filter('body_class', 'capitaine_body_class');
 
-# Add a div at the beginning of the content (with bbody open)
+# Add params to the related post query in single post
+function capitaine_related_posts_query($wp_query)
+{
+    if (!is_admin() && !$wp_query->is_main_query() && is_singular('post')) {
+        $current_post_id = get_the_ID();
+        $current_post_categories = wp_get_post_categories($current_post_id, ['fields' => 'ids']);
+
+        $wp_query->set('post__not_in', [$current_post_id]);
+        $wp_query->set('cat', $current_post_categories);
+    }
+}
+add_action('pre_get_posts', 'capitaine_related_posts_query');
 
 
 // TODO REMOVE
