@@ -169,6 +169,52 @@ function capitaine_related_posts_query($wp_query)
 }
 add_action('pre_get_posts', 'capitaine_related_posts_query');
 
+# Register new Custom Post Type « Portfolio »
+function capitaine_register_post_types()
+{
+    # CPT « Portfolio »
+    $labels = [
+        'name' => 'Portfolio',
+        'all_items' => 'Tous les projets',
+        'singular_name' => 'Projet',
+        'add_new_item' => 'Ajouter un projet',
+        'edit_item' => 'Modifier le projet',
+        'menu_name' => 'Portfolio'
+    ];
+
+    $args = [
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'show_in_rest' => true,
+        'supports' => ['title', 'editor', 'thumbnail', 'revisions'],
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-appearance',
+    ];
+
+    register_post_type('portfolio', $args);
+
+    // # Taxonomy « Type de projets »
+    $labels = [
+        'name' => 'Types de projets',
+        'singular_name' => 'Type de projet',
+        'add_new_item' => 'Ajouter un Type de Projet',
+        'new_item_name' => 'Nom du nouveau Projet',
+        'parent_item' => 'Type de projet parent',
+    ];
+
+    $args = [
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => true,
+    ];
+
+    register_taxonomy('type-projets', 'portfolio', $args);
+}
+add_action('init', 'capitaine_register_post_types');
+
 
 // TODO REMOVE
 class SetupEditor
