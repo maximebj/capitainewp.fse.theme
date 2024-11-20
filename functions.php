@@ -23,35 +23,14 @@ add_action("wp_enqueue_scripts", "capitaine_register_assets");
 
 
 # Charger les styles de blocs
-/*
 function capitaine_register_blocks_assets()
 {
-    wp_enqueue_block_style(
-        "core/button",
-        [
-            "handle" => "capitaine-group",
-            "src"    => get_theme_file_uri("assets/css/core-group.css"),
-            "path"   => get_theme_file_path("assets/css/core-group.css"),
-            "ver"    => "1.0",
-        ]
-    );
-}
-add_action("init", "capitaine_register_blocks_assets");
-*/
-
-# Charger automatiquement les styles de blocs
-function capitaine_auto_register_blocks_assets()
-{
-    # Trouver les fichiers CSS 
     $files = glob(get_template_directory() . '/assets/styles/*.css');
 
     foreach ($files as $file) {
-
-        # Récupérer le nom du fichier et trouver le bloc correspondant
         $filename   = basename($file, '.css');
         $block_name = str_replace('core-', 'core/', $filename);
 
-        # Déclarer le style
         wp_enqueue_block_style(
             $block_name,
             [
@@ -63,7 +42,7 @@ function capitaine_auto_register_blocks_assets()
         );
     }
 }
-add_action('init', 'capitaine_auto_register_blocks_assets');
+add_action('init', 'capitaine_register_blocks_assets');
 
 # On retire le CSS natif des colonnes et on ajoute notre propre feuille de style
 function capitaine_deregister_stylesheets()
