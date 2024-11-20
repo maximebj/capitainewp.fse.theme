@@ -10,19 +10,20 @@ remove_theme_support("core-block-patterns");
 # Ajouter des fonctionnalités
 add_theme_support("editor-styles");
 
+
 # Déclarer les scripts et les styles
 function capitaine_register_assets()
 {
-    # Enqueue styles
-    wp_enqueue_style("main", get_stylesheet_uri(), [], "1.0.0");
+    # Intégrer des feuilles de style sur le site
+    wp_enqueue_style("main", get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
 
-    # Disable native blocks styles
+    # Désactiver le CSS de certains blocs
     wp_dequeue_style("wp-block-columns");
 }
 add_action("wp_enqueue_scripts", "capitaine_register_assets");
 
 
-# Charger les styles de blocs
+# Charger les styles de blocs personnalisés
 function capitaine_register_blocks_assets()
 {
     $files = glob(get_template_directory() . '/assets/styles/*.css');
@@ -44,12 +45,6 @@ function capitaine_register_blocks_assets()
 }
 add_action('init', 'capitaine_register_blocks_assets');
 
-# On retire le CSS natif des colonnes et on ajoute notre propre feuille de style
-function capitaine_deregister_stylesheets()
-{
-    wp_dequeue_style("wp-block-columns");
-}
-add_action("wp_enqueue_scripts", "capitaine_deregister_stylesheets");
 
 # Ajout de catégories de compositions personnalisées
 function capitaine_register_block_pattern_categories()
@@ -59,6 +54,7 @@ function capitaine_register_block_pattern_categories()
     register_block_pattern_category("marketing", ["label" => "Marketing"]);
 }
 add_action("init", "capitaine_register_block_pattern_categories");
+
 
 # Retirer les variations de styles de blocs natifs 
 function capitaine_deregister_blocks_variations()
@@ -72,6 +68,8 @@ function capitaine_deregister_blocks_variations()
 }
 add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_variations");
 
+
+# Retirer certains blocs de l'éditeur
 function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 {
     $blocks_to_disable = [
@@ -88,6 +86,7 @@ function capitaine_deregister_blocks($allowed_block_types, $editor_context)
     return array_values(array_diff($active_blocks, $blocks_to_disable));
 }
 add_filter("allowed_block_types_all", "capitaine_deregister_blocks", 10, 2);
+
 
 # Ajouter des catégories de compositions personnalisées
 function capitaine_register_patterns_categories()
@@ -114,7 +113,8 @@ function capitaine_register_patterns_categories()
 }
 add_filter("init", "capitaine_register_patterns_categories");
 
-# Allow SVG and WebP uploads
+
+# Autoriser l'import de fichiers SVG et WebP
 function capitaine_allow_mime($mimes)
 {
     $mimes["svg"] = "image/svg+xml";
@@ -124,7 +124,8 @@ function capitaine_allow_mime($mimes)
 }
 add_filter("upload_mimes", "capitaine_allow_mime");
 
-# Allow WebP uploads
+
+# Autorisations supplémentaires pour le WebP
 function capitaine_allow_file_types($types, $file, $filename, $mimes)
 {
     if (false !== strpos($filename, ".webp")) {
@@ -136,20 +137,23 @@ function capitaine_allow_file_types($types, $file, $filename, $mimes)
 }
 add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
 
-# Add a Google verification code in <head>
+
+# Ajouter des meta dans la balise <head> de la page
 function capitaine_add_google_site_verification()
 {
     echo '<meta name="google-site-verification" content="12345" />';
 }
 add_action('wp_head', 'capitaine_add_google_site_verification');
 
-# Add a custom class to the <body>
+
+# Ajouter une classe sur la balise <body>
 function capitaine_body_class($classes)
 {
     $classes[] = 'capitainewp';
     return $classes;
 }
 add_filter('body_class', 'capitaine_body_class');
+
 
 # Add params to the related post query in single post
 function capitaine_related_posts_query($wp_query)
@@ -164,7 +168,8 @@ function capitaine_related_posts_query($wp_query)
 }
 add_action('pre_get_posts', 'capitaine_related_posts_query');
 
-# Register new Custom Post Type « Portfolio »
+
+# Déclarer un nouveau type de publication « Portfolio »
 function capitaine_register_post_types()
 {
     # CPT « Portfolio »
@@ -190,7 +195,7 @@ function capitaine_register_post_types()
 
     register_post_type('portfolio', $args);
 
-    // # Taxonomy « Type de projets »
+    # Taxonomy « Type de projets »
     $labels = [
         'name' => 'Types de projets',
         'singular_name' => 'Type de projet',
