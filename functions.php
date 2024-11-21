@@ -188,7 +188,7 @@ function capitaine_register_post_types()
         'show_in_rest' => true,
         'has_archive' => true,
         'show_in_rest' => true,
-        'supports' => ['title', 'editor', 'thumbnail', 'revisions'],
+        'supports' => ['title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
         'menu_position' => 5,
         'menu_icon' => 'dashicons-admin-appearance',
     ];
@@ -214,3 +214,36 @@ function capitaine_register_post_types()
     register_taxonomy('type-projets', 'portfolio', $args);
 }
 add_action('init', 'capitaine_register_post_types');
+
+
+# Déclarer les meta pour le bloc binding
+function capitaine_register_meta()
+{
+    register_meta(
+        'post',
+        'distance',
+        [
+            'show_in_rest'      => true,
+            'single'            => true,
+            'type'              => 'string',
+            'sanitize_callback' => 'wp_strip_all_tags',
+            'default'           => '{16 km}',
+            'label'             => 'Distance',
+        ]
+    );
+
+    register_meta(
+        'post',
+        'elevation',
+        [
+            'show_in_rest'      => true,
+            'single'            => true,
+            'type'              => 'string',
+            'sanitize_callback' => 'wp_strip_all_tags',
+            'default'           => '{400 D+}',
+            'label'             => 'Dénivelé',
+        ]
+    );
+}
+
+add_action('init', 'capitaine_register_meta');
