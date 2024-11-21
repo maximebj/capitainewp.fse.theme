@@ -247,3 +247,24 @@ function capitaine_register_meta()
 }
 
 add_action('init', 'capitaine_register_meta');
+
+
+# Déclarer des sources de données personnalisées pour le block binding
+function capitaine_register_binding_sources()
+{
+    register_block_bindings_source(
+        'capitaine/comments-number',
+        [
+            'label' => __('Nombre de commentaires', 'capitaine'),
+            'get_value_callback' => 'capitaine_comments_binding'
+        ]
+    );
+}
+add_action('init', 'capitaine_register_binding_sources');
+
+
+# Callback pour le block binding
+function capitaine_comments_binding($source_args, $block_instance, $attribute_name)
+{
+    return get_comments_number_text();
+}
