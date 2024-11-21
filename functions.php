@@ -38,7 +38,7 @@ function capitaine_register_blocks_assets()
                 'handle' => "capitaine-{$filename}",
                 "src"    => get_theme_file_uri("assets/styles/{$filename}.css"),
                 "path"   => get_theme_file_path("assets/styles/{$filename}.css"),
-                "ver"    => filemtime(get_theme_file_path("assets/styles/style.css"))
+                "ver"    => filemtime(get_theme_file_path("assets/styles/{$filename}.css"))
             ]
         );
     }
