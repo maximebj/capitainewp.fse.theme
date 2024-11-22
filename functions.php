@@ -264,7 +264,7 @@ add_action('init', 'capitaine_register_binding_sources');
 
 
 # Callback pour le block binding
-function capitaine_comments_binding($source_args, $block_instance, $attribute_name)
+function capitaine_comments_binding($source_attrs, $block_instance, $attribute_name)
 {
     return get_comments_number_text();
 }
