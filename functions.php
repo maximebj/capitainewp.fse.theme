@@ -24,9 +24,10 @@ add_action("wp_enqueue_scripts", "capitaine_register_assets");
 
 
 # Charger les styles de blocs personnalisés
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/surcharger-css-blocs-natifs/#automatiser-le-chargement-des-feuilles-de-styles
 function capitaine_register_blocks_assets()
 {
-    $files = glob(get_template_directory() . '/assets/styles/*.css');
+    $files = glob(get_template_directory() . '/assets/css/*.css');
 
     foreach ($files as $file) {
         $filename   = basename($file, '.css');
@@ -36,9 +37,9 @@ function capitaine_register_blocks_assets()
             $block_name,
             [
                 'handle' => "capitaine-{$filename}",
-                "src"    => get_theme_file_uri("assets/styles/{$filename}.css"),
-                "path"   => get_theme_file_path("assets/styles/{$filename}.css"),
-                "ver"    => filemtime(get_theme_file_path("assets/styles/{$filename}.css"))
+                "src"    => get_theme_file_uri("assets/css/{$filename}.css"),
+                "path"   => get_theme_file_path("assets/css/{$filename}.css"),
+                "ver"    => filemtime(get_theme_file_path("assets/css/{$filename}.css"))
             ]
         );
     }
@@ -170,6 +171,7 @@ add_action('pre_get_posts', 'capitaine_related_posts_query');
 
 
 # Déclarer un nouveau type de publication « Portfolio »
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modeles-custom-post-types/#declaration-classique-en-php
 function capitaine_register_post_types()
 {
     # CPT « Portfolio »
@@ -217,6 +219,7 @@ add_action('init', 'capitaine_register_post_types');
 
 
 # Déclarer les meta pour le bloc binding
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/donnees-dynamiques-binding-api/#le-bloc-binding-avec-les-post-metas
 function capitaine_register_meta()
 {
     register_meta(
@@ -250,6 +253,7 @@ add_action('init', 'capitaine_register_meta');
 
 
 # Déclarer des sources de données personnalisées pour le block binding
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/donnees-dynamiques-binding-api/#creer-une-source-de-donnees-personnalisee
 function capitaine_register_binding_sources()
 {
     register_block_bindings_source(
