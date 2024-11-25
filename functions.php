@@ -1,5 +1,8 @@
 <?php
 
+# Bases du thème
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/base-theme-fse/#le-fichier-functions-php
+
 # Retirer les accents des noms de fichiers
 add_filter("sanitize_file_name", "remove_accents");
 
@@ -9,7 +12,6 @@ remove_theme_support("core-block-patterns");
 
 # Ajouter des fonctionnalités
 add_theme_support("editor-styles");
-
 
 # Déclarer les scripts et les styles
 function capitaine_register_assets()
@@ -21,6 +23,29 @@ function capitaine_register_assets()
     wp_dequeue_style("wp-block-columns");
 }
 add_action("wp_enqueue_scripts", "capitaine_register_assets");
+
+# Autoriser l'import de fichiers SVG et WebP
+function capitaine_allow_mime($mimes)
+{
+    $mimes["svg"] = "image/svg+xml";
+    $mimes["webp"] = "image/webp";
+
+    return $mimes;
+}
+add_filter("upload_mimes", "capitaine_allow_mime");
+
+
+# Autorisations supplémentaires pour le WebP
+function capitaine_allow_file_types($types, $file, $filename, $mimes)
+{
+    if (false !== strpos($filename, ".webp")) {
+        $types["ext"] = "webp";
+        $types["type"] = "image/webp";
+    }
+
+    return $types;
+}
+add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
 
 
 # Charger les styles de blocs personnalisés
@@ -47,17 +72,8 @@ function capitaine_register_blocks_assets()
 add_action('init', 'capitaine_register_blocks_assets');
 
 
-# Ajout de catégories de compositions personnalisées
-function capitaine_register_block_pattern_categories()
-{
-    register_block_pattern_category("cta", ["label" => "Call to action"]);
-    register_block_pattern_category("cards", ["label" => "Cards"]);
-    register_block_pattern_category("marketing", ["label" => "Marketing"]);
-}
-add_action("init", "capitaine_register_block_pattern_categories");
-
-
 # Retirer les variations de styles de blocs natifs 
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/retirer-variations-styles-blocs-natifs/#la-methode-javascript
 function capitaine_deregister_blocks_variations()
 {
     wp_enqueue_script(
@@ -70,26 +86,19 @@ function capitaine_deregister_blocks_variations()
 add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_variations");
 
 
-# Retirer certains blocs de l'éditeur
-function capitaine_deregister_blocks($allowed_block_types, $editor_context)
+# Ajout de catégories de compositions personnalisées
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/categories-compositions/#declarer-des-categories-de-compositions
+function capitaine_register_block_pattern_categories()
 {
-    $blocks_to_disable = [
-        "core/preformatted",
-        "core/pullquote",
-        "core/quote",
-        "core/rss",
-        "core/verse",
-    ];
-    $active_blocks = array_keys(
-        WP_Block_Type_Registry::get_instance()->get_all_registered()
-    );
-
-    return array_values(array_diff($active_blocks, $blocks_to_disable));
+    register_block_pattern_category("cta", ["label" => "Call to action"]);
+    register_block_pattern_category("cards", ["label" => "Cards"]);
+    register_block_pattern_category("marketing", ["label" => "Marketing"]);
 }
-add_filter("allowed_block_types_all", "capitaine_deregister_blocks", 10, 2);
+add_action("init", "capitaine_register_block_pattern_categories");
 
 
 # Ajouter des catégories de compositions personnalisées
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/categories-compositions/#declarer-des-categories-de-compositions
 function capitaine_register_patterns_categories()
 {
     register_block_pattern_category(
@@ -115,28 +124,24 @@ function capitaine_register_patterns_categories()
 add_filter("init", "capitaine_register_patterns_categories");
 
 
-# Autoriser l'import de fichiers SVG et WebP
-function capitaine_allow_mime($mimes)
+# Retirer certains blocs de l'éditeur
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/desactiver-blocs-gutenberg/#exclusionnbsp-retirer-seulement-certains-blocs
+function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 {
-    $mimes["svg"] = "image/svg+xml";
-    $mimes["webp"] = "image/webp";
+    $blocks_to_disable = [
+        "core/preformatted",
+        "core/pullquote",
+        "core/quote",
+        "core/rss",
+        "core/verse",
+    ];
+    $active_blocks = array_keys(
+        WP_Block_Type_Registry::get_instance()->get_all_registered()
+    );
 
-    return $mimes;
+    return array_values(array_diff($active_blocks, $blocks_to_disable));
 }
-add_filter("upload_mimes", "capitaine_allow_mime");
-
-
-# Autorisations supplémentaires pour le WebP
-function capitaine_allow_file_types($types, $file, $filename, $mimes)
-{
-    if (false !== strpos($filename, ".webp")) {
-        $types["ext"] = "webp";
-        $types["type"] = "image/webp";
-    }
-
-    return $types;
-}
-add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
+add_filter("allowed_block_types_all", "capitaine_deregister_blocks", 10, 2);
 
 
 # Ajouter des meta dans la balise <head> de la page
@@ -148,13 +153,13 @@ add_action('wp_head', 'capitaine_add_google_site_verification');
 
 
 # Ajouter une classe sur la balise <body>
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/header-footer-full-site-editing/#utiliser-les-hooks-pour-inserer-des-balises
 function capitaine_body_class($classes)
 {
     $classes[] = 'capitainewp';
     return $classes;
 }
 add_filter('body_class', 'capitaine_body_class');
-
 
 # Add params to the related post query in single post
 function capitaine_related_posts_query($wp_query)
