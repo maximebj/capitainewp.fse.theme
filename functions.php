@@ -224,7 +224,7 @@ add_action('init', 'capitaine_register_post_types');
 
 
 # Définir le contenu par défaut des publications du Portfolio
-# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modeles-custom-post-types#ajouter-un-contenu-par-defaut
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modeles-custom-post-types/#ajouter-un-contenu-par-defaut-a-votre-cpt
 function capitaine_add_default_content($content, $post)
 {
     if ($post->post_type === 'portfolio') {
