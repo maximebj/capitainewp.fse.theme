@@ -223,6 +223,18 @@ function capitaine_register_post_types()
 add_action('init', 'capitaine_register_post_types');
 
 
+# Définir le contenu par défaut des publications du Portfolio
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modeles-custom-post-types#ajouter-un-contenu-par-defaut
+function capitaine_add_default_content($content, $post)
+{
+    if ($post->post_type === 'portfolio') {
+        $content = '<!-- wp:pattern  { "slug":"hero-title" } /-->';
+    }
+    return $content;
+}
+add_filter('default_content', 'capitaine_add_default_content', 10, 2);
+
+
 # Déclarer les meta pour le bloc binding
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/donnees-dynamiques-binding-api/#le-bloc-binding-avec-les-post-metas
 function capitaine_register_meta()
