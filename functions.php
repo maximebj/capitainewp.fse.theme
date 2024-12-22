@@ -234,6 +234,20 @@ function capitaine_add_default_content($content, $post)
 }
 add_filter('default_content', 'capitaine_add_default_content', 10, 2);
 
+# Retirer des niveaux de titre dans les blocs de type Heading
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/retirer-des-niveaux-de-titre-dans-le-bloc-titre/#retirer-les-niveaux-de-titres
+function remove_heading_levels($args, $block_type)
+{
+    if ($block_type !== 'core/heading') {
+        return $args;
+    }
+
+    $args['attributes']['levelOptions']['default'] = [1, 2, 3, 4];
+
+    return $args;
+}
+add_action('register_block_type_args', 'remove_heading_levels', 10, 2);
+
 
 # Déclarer les meta pour le bloc binding
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/donnees-dynamiques-binding-api/#le-bloc-binding-avec-les-post-metas
