@@ -185,7 +185,6 @@ function capitaine_register_post_types()
         'public' => true,
         'show_in_rest' => true,
         'has_archive' => true,
-        'show_in_rest' => true,
         'supports' => ['title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
         'menu_position' => 5,
         'menu_icon' => 'dashicons-admin-appearance',
