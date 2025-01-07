@@ -13,6 +13,7 @@ remove_theme_support("core-block-patterns");
 # Ajouter des fonctionnalités
 add_theme_support("editor-styles");
 
+
 # Déclarer les scripts et les styles
 function capitaine_register_assets()
 {
@@ -23,6 +24,7 @@ function capitaine_register_assets()
     wp_dequeue_style("wp-block-columns");
 }
 add_action("wp_enqueue_scripts", "capitaine_register_assets");
+
 
 # Autoriser l'import de fichiers SVG et WebP
 function capitaine_allow_mime($mimes)
@@ -84,17 +86,6 @@ function capitaine_deregister_blocks_variations()
     );
 }
 add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_variations");
-
-
-# Ajout de catégories de compositions personnalisées
-# Dans https://capitainewp.io/formations/wordpress-full-site-editing/categories-compositions/#declarer-des-categories-de-compositions
-function capitaine_register_block_pattern_categories()
-{
-    register_block_pattern_category("cta", ["label" => "Call to action"]);
-    register_block_pattern_category("cards", ["label" => "Cards"]);
-    register_block_pattern_category("marketing", ["label" => "Marketing"]);
-}
-add_action("init", "capitaine_register_block_pattern_categories");
 
 
 # Ajouter des catégories de compositions personnalisées
