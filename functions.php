@@ -294,3 +294,12 @@ function capitaine_comments_binding($source_attrs, $block_instance, $attribute_n
 {
     return get_comments_number_text();
 }
+
+
+# Déclarer un bloc custom avec ACF
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/blocs-acf-gutenberg
+function register_acf_blocks()
+{
+    register_block_type(__DIR__ . "/blocks/example");
+}
+add_action('init', 'register_acf_blocks');
