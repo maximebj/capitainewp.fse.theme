@@ -17,12 +17,12 @@
             "caption": true,
             "button": true,
             "heading": true,
-            "custom": false,
+            "custom": true,
             "customDuotone": true,
             "customGradient": true,
             "defaultDuotone": true,
             "defaultGradients": true,
-            "defaultPalette": false,
+            "defaultPalette": true,
             "gradients": [
                 {
                     "name": "Purple",
@@ -427,6 +427,13 @@
             }
         }
     },
+    "customTemplates": [
+        {
+            "name": "page-full-width",
+            "title": "Page pleine largeur, sans titre",
+            "postTypes": ["page"]
+        }
+    ],
     "templateParts": [
         {
             "area": "header",
@@ -447,13 +454,6 @@
             "area": "",
             "name": "newsletter",
             "title": "Inscription à la newsletter"
-        }
-    ],
-    "customTemplates": [
-        {
-            "name": "page-full-width",
-            "title": "Page pleine largeur, sans titre",
-            "postTypes": ["page"]
         }
     ]
 }
