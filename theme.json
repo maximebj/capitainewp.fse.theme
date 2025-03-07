@@ -134,7 +134,7 @@
             "fontStyle": false,
             "fontWeight": true,
             "letterSpacing": false,
-            "lineHeight": false,
+            "lineHeight": true,
             "textAlign": true,
             "textColumns": false,
             "textDecoration": false,
@@ -413,7 +413,7 @@
         "blocks": {
             "core/image": {
                 "border": {
-                    "radius": "var:custom|radius|medium"
+                    "radius": "var:custom|radius|m"
                 }
             },
             "core/heading": {

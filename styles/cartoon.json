@@ -60,7 +60,7 @@
             "h1": {
                 "typography": {
                     "fontFamily": "ACME",
-                    "fontSize": "large"
+                    "fontSize": "var:preset|font-size|l"
                 }
             }
         }
