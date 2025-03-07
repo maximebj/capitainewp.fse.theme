@@ -18,3 +18,10 @@ Text Domain: capitaine
         display: none;
     }
 }
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --wp--preset--color--primary: #e5dfff;
+        --wp--preset--color--secondary: #e5dfff;
+    }
+} */
