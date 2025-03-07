@@ -17,12 +17,14 @@
             "caption": true,
             "button": true,
             "heading": true,
-            "custom": true,
-            "customDuotone": true,
-            "customGradient": true,
-            "defaultDuotone": true,
-            "defaultGradients": true,
-            "defaultPalette": true,
+
+            "custom": false,
+            "customDuotone": false,
+            "customGradient": false,
+            "defaultPalette": false,
+            "defaultDuotone": false,
+            "defaultGradients": false,
+
             "gradients": [
                 {
                     "name": "Purple",
@@ -80,7 +82,7 @@
                 },
                 {
                     "name": "Blanc",
-                    "slug": "white",
+                    "slug": "base",
                     "color": "#FFFFFF"
                 },
                 {
@@ -91,54 +93,85 @@
             ]
         },
         "spacing": {
-            "blockGap": true,
-            "customSpacingSize": true,
             "margin": true,
             "padding": true,
-            "units": ["px", "em", "rem", "vh", "vw", "%"],
+            "blockGap": true,
+
+            "units": ["px", "rem", "vh", "%"],
+
+            "customSpacingSize": false,
             "defaultSpacingSizes": false,
             "spacingSizes": [
                 {
                     "name": "Très petit",
-                    "size": "1rem",
-                    "slug": "xs"
+                    "slug": "xs",
+                    "size": "1rem"
                 },
                 {
                     "name": "Petit",
-                    "size": "1.6rem",
-                    "slug": "s"
+                    "slug": "s",
+                    "size": "1.6rem"
                 },
                 {
                     "name": "Moyen",
-                    "size": "3.2rem",
-                    "slug": "m"
+                    "slug": "m",
+                    "size": "3.2rem"
                 },
                 {
                     "name": "Grand",
-                    "size": "4.8rem",
-                    "slug": "l"
+                    "slug": "l",
+                    "size": "4.8rem"
                 },
                 {
                     "name": "Très grand",
-                    "size": "6.4rem",
-                    "slug": "xl"
+                    "slug": "xl",
+                    "size": "6.4rem"
                 }
             ]
         },
         "typography": {
-            "customFontSize": false,
-            "defaultFontSizes": false,
             "dropCap": false,
-            "fluid": true,
             "fontStyle": false,
             "fontWeight": true,
             "letterSpacing": false,
-            "lineHeight": true,
+            "lineHeight": false,
             "textAlign": true,
             "textColumns": false,
             "textDecoration": false,
             "textTransform": true,
             "writingMode": false,
+
+            "customFontSize": false,
+            "defaultFontSizes": false,
+            "fluid": true,
+            "fontSizes": [
+                {
+                    "name": "Petit",
+                    "slug": "s",
+                    "size": "0.88rem"
+                },
+                {
+                    "name": "Moyen",
+                    "slug": "m",
+                    "size": "1.125rem"
+                },
+                {
+                    "name": "Grand",
+                    "slug": "l",
+                    "size": "1.4rem"
+                },
+                {
+                    "name": "Très Grand",
+                    "slug": "xl",
+                    "size": "3rem"
+                },
+                {
+                    "name": "Énorme",
+                    "slug": "xxl",
+                    "size": "4rem"
+                }
+            ],
+
             "fontFamilies": [
                 {
                     "fontFamily": "'Open Sans', sans-serif",
@@ -180,37 +213,6 @@
                         }
                     ]
                 }
-            ],
-            "fontSizes": [
-                {
-                    "name": "Petit",
-                    "size": "0.88rem",
-                    "slug": "s"
-                },
-                {
-                    "name": "Moyen",
-                    "size": "1.125rem",
-                    "slug": "m"
-                },
-                {
-                    "name": "Grand",
-                    "size": "1.4rem",
-                    "slug": "l"
-                },
-                {
-                    "name": "Très Grand",
-                    "size": "3rem",
-                    "slug": "xl"
-                },
-                {
-                    "name": "Énorme",
-                    "size": "4rem",
-                    "slug": "xxl",
-                    "fluid": {
-                        "min": "2rem",
-                        "max": "4rem"
-                    }
-                }
             ]
         },
         "border": {
@@ -221,10 +223,10 @@
         },
         "background": {
             "backgroundImage": true,
-            "backgroundSize": false
+            "backgroundSize": true
         },
         "shadow": {
-            "defaultPresets": true,
+            "defaultPresets": false,
             "presets": [
                 {
                     "name": "Douce",
@@ -244,9 +246,27 @@
             ]
         },
         "dimensions": {
+            "minHeight": true,
+
             "aspectRatio": true,
-            "defaultAspectRatios": true,
-            "minHeight": true
+            "defaultAspectRatios": false,
+            "aspectRatios": [
+                {
+                    "name": "Carré - 1:1",
+                    "slug": "square",
+                    "ratio": "1"
+                },
+                {
+                    "name": "Standard - 4:3",
+                    "slug": "standard",
+                    "ratio": "1.3333"
+                },
+                {
+                    "name": "Large - 16:9",
+                    "slug": "wide",
+                    "ratio": "1.7778"
+                }
+            ]
         },
         "position": {
             "sticky": true
@@ -277,14 +297,9 @@
             }
         },
         "blocks": {
-            "core/group": {
-                "color": {
-                    "background": true
-                }
-            },
             "core/image": {
                 "lightbox": {
-                    "enabled": true,
+                    "enabled": false,
                     "allowEditing": true
                 }
             }
@@ -299,9 +314,9 @@
             "blockGap": "var:preset|spacing|s",
             "padding": {
                 "top": "0",
-                "right": "var:preset|spacing|s",
+                "right": "var:preset|spacing|xs",
                 "bottom": "0",
-                "left": "var:preset|spacing|s"
+                "left": "var:preset|spacing|xs"
             }
         },
         "typography": {
@@ -406,14 +421,12 @@
                     "lineHeight": "var:custom|line-height|narrow"
                 }
             },
-            "core/group": {
+            "core/buttons": {
                 "spacing": {
-                    "margin": {
-                        "top": "0 !important"
-                    }
+                    "blockGap": "var:preset|spacing|s"
                 }
             },
-            "core/buttons": {
+            "core/group": {
                 "spacing": {
                     "blockGap": "var:preset|spacing|s"
                 }
@@ -421,7 +434,7 @@
             "core/template-part": {
                 "spacing": {
                     "margin": {
-                        "top": "0 !important"
+                        "top": "0px !important"
                     }
                 }
             }
