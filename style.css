@@ -21,7 +21,9 @@ Text Domain: capitaine
 
 /* @media (prefers-color-scheme: dark) {
     :root {
-        --wp--preset--color--primary: #e5dfff;
-        --wp--preset--color--secondary: #e5dfff;
+        --wp--preset--color--primary: #6e39a7;
+        --wp--preset--color--secondary: #fe719e;
+        --wp--preset--color--base: #000000;
+        --wp--preset--color--gray: #222222;
     }
 } */
