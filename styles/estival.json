@@ -8,7 +8,7 @@
                 {
                     "name": "Bleu léger",
                     "slug": "primary",
-                    "color": "#8ECAE6"
+                    "color": "#023047"
                 },
                 {
                     "name": "Bleu",
@@ -18,7 +18,7 @@
                 {
                     "name": "Bleu intense",
                     "slug": "accent",
-                    "color": "#023047"
+                    "color": "#8ECAE6"
                 },
                 {
                     "name": "Jaune",
