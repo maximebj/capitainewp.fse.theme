@@ -308,7 +308,7 @@
     "styles": {
         "color": {
             "text": "var:preset|color|primary",
-            "background": "var:preset|color|white"
+            "background": "var:preset|color|base"
         },
         "spacing": {
             "blockGap": "var:preset|spacing|s",
