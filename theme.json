@@ -217,7 +217,7 @@
         },
         "border": {
             "color": true,
-            "radius": true,
+            "width": true,
             "style": true,
 
             "radius": true
