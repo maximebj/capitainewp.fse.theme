@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.wp-block-group.is-style-wave::after {
+.wp-block-group.is-style-wave::before {
     content: "";
     display: block;
     position: absolute;
