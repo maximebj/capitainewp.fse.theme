@@ -9,8 +9,14 @@
             "background": "var:preset|color|primary",
             "text": "var:preset|color|white"
         },
-        "elements": {
-            "heading": {
+        "spacing": {
+            "padding": {
+                "top": "var:preset|spacing|xl",
+                "bottom": "var:preset|spacing|xl"
+            }
+        },
+        "blocks": {
+            "core/heading": {
                 "color": {
                     "text": "var:preset|color|accent"
                 }
