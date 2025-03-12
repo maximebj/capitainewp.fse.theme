@@ -12,6 +12,7 @@ remove_theme_support("core-block-patterns");
 
 # Ajouter des fonctionnalités
 add_theme_support("editor-styles");
+add_editor_style("style-editor.css");
 
 
 # Déclarer les scripts et les styles
@@ -119,6 +120,7 @@ add_filter("init", "capitaine_register_patterns_categories");
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/desactiver-blocs-gutenberg/#exclusionnbsp-retirer-seulement-certains-blocs
 function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 {
+    
     $blocks_to_disable = [
         "core/preformatted",
         "core/pullquote",
