@@ -7,7 +7,7 @@
     "styles": {
         "color": {
             "background": "var:custom|color|secondary-alt",
-            "text": "var:preset|color|white"
+            "text": "var:preset|color|base"
         }
     }
 }

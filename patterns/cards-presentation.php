@@ -12,7 +12,7 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["cards","marketing","hero"],"patternName":"cards-presentation","name":"Hero"},"align":"wide","className":"is-style-rounded","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"padding":{"right":"var:preset|spacing|m","left":"var:preset|spacing|m","top":"var:preset|spacing|m","bottom":"var:preset|spacing|m"}},"border":{"radius":"20px"}},"backgroundColor":"primary","textColor":"white","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"categories":["cards","marketing","hero"],"patternName":"cards-presentation","name":"Hero"},"align":"wide","className":"is-style-rounded","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"padding":{"right":"var:preset|spacing|m","left":"var:preset|spacing|m","top":"var:preset|spacing|m","bottom":"var:preset|spacing|m"}},"border":{"radius":"20px"}},"backgroundColor":"primary","textColor":"white","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide is-style-rounded has-white-color has-primary-background-color has-text-color has-background has-link-color" style="border-radius:20px;padding-top:var(--wp--preset--spacing--m);padding-right:var(--wp--preset--spacing--m);padding-bottom:var(--wp--preset--spacing--m);padding-left:var(--wp--preset--spacing--m)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0","left":"var:preset|spacing|m"}}}} -->
     <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
         <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
@@ -32,7 +32,7 @@
                 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
 
-                <!-- wp:button {"textColor":"white","className":"is-style-button-transparent","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"borderColor":"white"} -->
+                <!-- wp:button {"textColor":"white","className":"is-style-button-transparent","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"borderColor":"white"} -->
                 <div class="wp-block-button is-style-button-transparent"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-border-color has-white-border-color wp-element-button">Nos services</a></div>
                 <!-- /wp:button -->
             </div>
