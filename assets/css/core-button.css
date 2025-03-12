@@ -1,7 +1,11 @@
 /* Style: Contour in Group purple */
-.wp-block-group.has-primary-background-color
-    .wp-block-button.is-style-border
+.wp-block-group:is(
+        .has-primary-background-color,
+        .is-style-wave,
+        .is-style-diagonal
+    )
+    .wp-block-button.is-style-transparent
     .wp-element-button {
-    color: var(--wp--preset--color--accent);
-    border-color: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--base);
+    border-color: var(--wp--preset--color--base);
 }
