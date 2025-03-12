@@ -138,6 +138,7 @@ add_filter("allowed_block_types_all", "capitaine_deregister_blocks", 10, 2);
 
 
 # Ajouter des meta dans la balise <head> de la page
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/header-footer-full-site-editing/#utiliser-les-hooks-pour-inserer-des-balises
 function capitaine_add_google_site_verification()
 {
     echo '<meta name="google-site-verification" content="12345" />';
