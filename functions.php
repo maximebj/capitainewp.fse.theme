@@ -104,8 +104,7 @@ function capitaine_filter_theme_json_theme($theme_json)
 
     return $theme_json->update_with($new_data);
 }
-
-add_filter('wp_theme_json_data_theme', 'capitaine_filter_theme_json_theme');
+//add_filter('wp_theme_json_data_theme', 'capitaine_filter_theme_json_theme');
 
 
 # Ajouter des catégories de compositions personnalisées
