@@ -93,7 +93,7 @@
             ]
         },
         "spacing": {
-            "margin": true,
+            "margin": false,
             "padding": true,
             "blockGap": true,
 
@@ -216,11 +216,11 @@
             ]
         },
         "border": {
-            "color": true,
-            "width": true,
-            "style": true,
+            "color": false,
+            "width": false,
+            "style": false,
 
-            "radius": true
+            "radius": false
         },
         "background": {
             "backgroundImage": true,
@@ -247,7 +247,7 @@
             ]
         },
         "dimensions": {
-            "minHeight": true,
+            "minHeight": false,
 
             "aspectRatio": true,
             "defaultAspectRatios": false,
@@ -270,7 +270,7 @@
             ]
         },
         "position": {
-            "sticky": true
+            "sticky": false
         },
         "custom": {
             "fontWeight": {

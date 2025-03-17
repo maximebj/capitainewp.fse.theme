@@ -89,6 +89,25 @@ function capitaine_deregister_blocks_variations()
 add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_variations");
 
 
+# Activer toutes les fonctionnalités de l'éditeur de blocks aux administrateurs
+# Dans https://capitainewp.io/formations/wordpress-full-site-editing/hooker-le-theme-json-en-php/#offrir-une-experience-differente-en-fonction-des-roles-utilisateurs
+function capitaine_filter_theme_json_theme($theme_json)
+{
+    if (!current_user_can('edit_theme_options')) {
+        return $theme_json;
+    }
+
+    $new_data = json_decode(
+        file_get_contents(get_theme_file_path('admin.json')),
+        true
+    );
+
+    return $theme_json->update_with($new_data);
+}
+
+add_filter('wp_theme_json_data_theme', 'capitaine_filter_theme_json_theme');
+
+
 # Ajouter des catégories de compositions personnalisées
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/categories-compositions/#declarer-des-categories-de-compositions
 function capitaine_register_patterns_categories()
@@ -120,7 +139,7 @@ add_filter("init", "capitaine_register_patterns_categories");
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/desactiver-blocs-gutenberg/#exclusionnbsp-retirer-seulement-certains-blocs
 function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 {
-    
+
     $blocks_to_disable = [
         "core/preformatted",
         "core/pullquote",
