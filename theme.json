@@ -93,7 +93,7 @@
             ]
         },
         "spacing": {
-            "margin": false,
+            "margin": true,
             "padding": true,
             "blockGap": true,
 
@@ -220,7 +220,7 @@
             "width": false,
             "style": false,
 
-            "radius": false
+            "radius": true
         },
         "background": {
             "backgroundImage": true,
