@@ -447,17 +447,17 @@
         {
             "area": "header",
             "name": "header",
-            "title": "Header"
+            "title": "En-tête"
         },
         {
             "area": "header",
             "name": "header-marketing",
-            "title": "Header Minimaliste"
+            "title": "En-tête Minimaliste"
         },
         {
             "area": "footer",
             "name": "footer",
-            "title": "Footer"
+            "title": "Pied de page"
         },
         {
             "area": "",
