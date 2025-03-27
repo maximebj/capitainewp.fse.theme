@@ -306,14 +306,27 @@ function capitaine_register_binding_sources()
             'get_value_callback' => 'capitaine_comments_binding'
         ]
     );
+
+    register_block_bindings_source(
+        'capitaine/permalink',
+        [
+            'label' => __('Lien vers la publication', 'capitaine'),
+            'get_value_callback' => 'capitaine_permalink_binding'
+        ]
+    );
 }
 add_action('init', 'capitaine_register_binding_sources');
 
 
-# Callback pour le block binding
+# Callbacks pour le block binding
 function capitaine_comments_binding($source_attrs, $block_instance, $attribute_name)
 {
     return get_comments_number_text();
+}
+
+function capitaine_permalink_binding($source_attrs, $block_instance, $attribute_name)
+{
+    return get_permalink();
 }
 
 
