@@ -1,4 +1,4 @@
-<!-- wp:template-part {"slug":"header","area":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"capitainewp-fse","area":"header"} /-->
 
 <!-- wp:group {"metadata":{"name":"Publication"},"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
 <div
@@ -54,7 +54,46 @@
         <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
         <div class="wp-block-group">
             <!-- wp:paragraph -->
-            <p>Prix&nbsp;:</p>
+            <p>Distance :</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"distance"}}}}} -->
+            <p></p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group">
+            <!-- wp:paragraph -->
+            <p>Dénivelé&nbsp;:</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"elevation"}}}}} -->
+            <p></p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"border":{"radius":"999px"},"spacing":{"padding":{"top":"var:preset|spacing|xs","bottom":"var:preset|spacing|xs","left":"var:preset|spacing|s","right":"var:preset|spacing|s"},"margin":{"top":"var:preset|spacing|xs","bottom":"var:preset|spacing|xs"}}},"backgroundColor":"contrast","textColor":"white","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+    <div
+        class="wp-block-group has-white-color has-contrast-background-color has-text-color has-background has-link-color"
+        style="
+            border-radius: 999px;
+            margin-top: var(--wp--preset--spacing--xs);
+            margin-bottom: var(--wp--preset--spacing--xs);
+            padding-top: var(--wp--preset--spacing--xs);
+            padding-right: var(--wp--preset--spacing--s);
+            padding-bottom: var(--wp--preset--spacing--xs);
+            padding-left: var(--wp--preset--spacing--s);
+        "
+    >
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group">
+            <!-- wp:paragraph -->
+            <p>Prix :</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"acf/field","args":{"key":"price"}}}}} -->
@@ -66,7 +105,7 @@
         <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
         <div class="wp-block-group">
             <!-- wp:paragraph -->
-            <p>Durée&nbsp;:</p>
+            <p>Durée :</p>
             <!-- /wp:paragraph -->
 
             <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"acf/field","args":{"key":"duration"}}}}} -->
@@ -195,4 +234,4 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","area":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"capitainewp-fse","area":"footer"} /-->
