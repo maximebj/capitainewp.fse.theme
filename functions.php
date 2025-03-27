@@ -176,7 +176,7 @@ add_filter('body_class', 'capitaine_body_class');
 # Add params to the related post query in single post
 function capitaine_related_posts_query($wp_query)
 {
-    if (!is_admin() && !$wp_query->is_main_query() && is_singular('post')) {
+    if (!is_admin() && !$wp_query->is_main_query() && is_singular('post') && $wp_query->get('post_type') === 'post') {
         $current_post_id = get_the_ID();
         $current_post_categories = wp_get_post_categories($current_post_id, ['fields' => 'ids']);
 
