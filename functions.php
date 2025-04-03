@@ -130,6 +130,11 @@ function capitaine_register_patterns_categories()
         "posts",
         ["label" => __("Publications", "capitaine")]
     );
+
+    register_block_pattern_category(
+        "pages",
+        ["label" => __("Pages complètes", "capitaine")]
+    );
 }
 add_filter("init", "capitaine_register_patterns_categories");
 

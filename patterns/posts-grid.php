@@ -2,7 +2,7 @@
 
 /**
  * Title: Liste des articles en grille
- * Slug: posts-loop
+ * Slug: posts-grid
  * Description: La liste des articles du blog en grille
  * Categories: posts
  * Keywords: blog, posts, query, loop
