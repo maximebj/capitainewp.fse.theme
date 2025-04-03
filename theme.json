@@ -247,7 +247,7 @@
             ]
         },
         "dimensions": {
-            "minHeight": false,
+            "minHeight": true,
 
             "aspectRatio": true,
             "defaultAspectRatios": false,
