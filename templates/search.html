@@ -1,8 +1,8 @@
 <!-- wp:template-part {"slug":"header","theme":"capitainewp-fse","area":"header"} /-->
 
-<!-- wp:group {"tagName":"main","metadata":{"categories":["posts"],"patternName":"posts-list","name":"Liste verticale des articles"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|l","bottom":"var:preset|spacing|l"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"gray","layout":{"type":"constrained"}} -->
-<main
-    class="wp-block-group alignfull has-gray-background-color has-background"
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|l","bottom":"var:preset|spacing|l"}}},"backgroundColor":"gray","layout":{"type":"constrained"}} -->
+<div
+    class="wp-block-group has-gray-background-color has-background"
     style="
         margin-top: 0;
         margin-bottom: 0;
@@ -10,15 +10,22 @@
         padding-bottom: var(--wp--preset--spacing--l);
     "
 >
-    <!-- wp:heading {"textAlign":"center","level":1,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|l"}}}} -->
-    <h1
-        class="wp-block-heading has-text-align-center"
-        style="margin-top: 0; margin-bottom: var(--wp--preset--spacing--l)"
-    >
-        Mes dernières actualités
-    </h1>
-    <!-- /wp:heading -->
+    <!-- wp:query-title {"type":"search"} /-->
 
+    <!-- wp:search {"label":"Rechercher","buttonText":"Rechercher"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"categories":["posts"],"patternName":"posts-list","name":"Grille"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"gray","layout":{"type":"constrained"}} -->
+<div
+    class="wp-block-group alignfull has-gray-background-color has-background"
+    style="
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: var(--wp--preset--spacing--xl);
+        padding-bottom: var(--wp--preset--spacing--xl);
+    "
+>
     <!-- wp:query {"queryId":29,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[],"format":[]}} -->
     <div class="wp-block-query">
         <!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|s"}},"layout":{"type":"default","columnCount":3,"minimumColumnWidth":null}} -->
@@ -148,7 +155,7 @@
         <!-- /wp:query-no-results -->
     </div>
     <!-- /wp:query -->
-</main>
+</div>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","theme":"capitainewp-fse","area":"footer"} /-->

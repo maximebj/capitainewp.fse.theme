@@ -57,7 +57,7 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center">Aucun voyage</h2>
+<h2 class="wp-block-heading has-text-align-center">Aucun article</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
