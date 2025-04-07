@@ -55,16 +55,16 @@ add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/surcharger-css-blocs-natifs/#automatiser-le-chargement-des-feuilles-de-styles
 function capitaine_register_blocks_assets()
 {
-    $files = glob(get_template_directory() . '/assets/css/*.css');
+    $files = glob(get_template_directory() . "/assets/css/*.css");
 
     foreach ($files as $file) {
-        $filename   = basename($file, '.css');
-        $block_name = str_replace('core-', 'core/', $filename);
+        $filename   = basename($file, ".css");
+        $block_name = str_replace("core-", "core/", $filename);
 
         wp_enqueue_block_style(
             $block_name,
             [
-                'handle' => "capitaine-{$filename}",
+                "handle" => "capitaine-{$filename}",
                 "src"    => get_theme_file_uri("assets/css/{$filename}.css"),
                 "path"   => get_theme_file_path("assets/css/{$filename}.css"),
                 "ver"    => filemtime(get_theme_file_path("assets/css/{$filename}.css"))
@@ -72,7 +72,7 @@ function capitaine_register_blocks_assets()
         );
     }
 }
-add_action('init', 'capitaine_register_blocks_assets');
+add_action("init", "capitaine_register_blocks_assets");
 
 
 # Retirer les variations de styles de blocs natifs 
@@ -93,12 +93,12 @@ add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_variation
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/hooker-le-theme-json-en-php/#offrir-une-experience-differente-en-fonction-des-roles-utilisateurs
 function capitaine_filter_theme_json_theme($theme_json)
 {
-    if (!current_user_can('edit_theme_options')) {
+    if (!current_user_can("edit_theme_options")) {
         return $theme_json;
     }
 
     $new_data = json_decode(
-        file_get_contents(get_theme_file_path('admin.json')),
+        file_get_contents(get_theme_file_path("admin.json")),
         true
     );
 
@@ -143,7 +143,6 @@ add_filter("init", "capitaine_register_patterns_categories");
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/desactiver-blocs-gutenberg/#exclusionnbsp-retirer-seulement-certains-blocs
 function capitaine_deregister_blocks($allowed_block_types, $editor_context)
 {
-
     $blocks_to_disable = [
         "core/preformatted",
         "core/pullquote",
@@ -166,30 +165,34 @@ function capitaine_add_google_site_verification()
 {
     echo '<meta name="google-site-verification" content="12345" />';
 }
-add_action('wp_head', 'capitaine_add_google_site_verification');
+add_action("wp_head", "capitaine_add_google_site_verification");
 
 
 # Ajouter une classe sur la balise <body>
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/header-footer-full-site-editing/#utiliser-les-hooks-pour-inserer-des-balises
 function capitaine_body_class($classes)
 {
-    $classes[] = 'capitainewp';
+    $classes[] = "capitainewp";
     return $classes;
 }
-add_filter('body_class', 'capitaine_body_class');
+add_filter("body_class", "capitaine_body_class");
 
-# Add params to the related post query in single post
-function capitaine_related_posts_query($wp_query)
+
+# Modifier les paramètes d'une boucle de requête pour faire une liste Related Posts par exemple
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modifier-parametres-boucles-requetes-php/#modifier-une-boucle-de-requete-secondaire
+function capitaine_related_posts_query( $query_args, $block)
 {
-    if (!is_admin() && !$wp_query->is_main_query() && is_singular('post') && $wp_query->get('post_type') === 'post') {
+    if ( $block->context["queryId"] === 3 ) {        
         $current_post_id = get_the_ID();
-        $current_post_categories = wp_get_post_categories($current_post_id, ['fields' => 'ids']);
+        $current_post_categories = wp_get_post_categories($current_post_id, ["fields" => "ids"]);
 
-        $wp_query->set('post__not_in', [$current_post_id]);
-        $wp_query->set('cat', $current_post_categories);
+        $query_args["post__not_in"] = [$current_post_id];
+        $query_args["cat"] = $current_post_categories;
     }
+
+    return $query_args;
 }
-add_action('pre_get_posts', 'capitaine_related_posts_query');
+add_filter("query_loop_block_query_vars", "capitaine_related_posts_query", 10, 2);
 
 
 # Déclarer un nouveau type de publication « Portfolio »
@@ -198,72 +201,72 @@ function capitaine_register_post_types()
 {
     # CPT « Portfolio »
     $labels = [
-        'name' => 'Portfolio',
-        'all_items' => 'Tous les projets',
-        'singular_name' => 'Projet',
-        'add_new_item' => 'Ajouter un projet',
-        'edit_item' => 'Modifier le projet',
-        'menu_name' => 'Portfolio'
+        "name" => "Portfolio",
+        "all_items" => "Tous les projets",
+        "singular_name" => "Projet",
+        "add_new_item" => "Ajouter un projet",
+        "edit_item" => "Modifier le projet",
+        "menu_name" => "Portfolio"
     ];
 
     $args = [
-        'labels' => $labels,
-        'public' => true,
-        'show_in_rest' => true,
-        'has_archive' => true,
-        'supports' => ['title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-appearance',
+        "labels" => $labels,
+        "public" => true,
+        "show_in_rest" => true,
+        "has_archive" => true,
+        "supports" => ["title", "editor", "thumbnail", "revisions", "custom-fields"],
+        "menu_position" => 5,
+        "menu_icon" => "dashicons-admin-appearance",
     ];
 
-    register_post_type('portfolio', $args);
+    register_post_type("portfolio", $args);
 
     # Taxonomy « Type de projets »
     $labels = [
-        'name' => 'Types de projets',
-        'singular_name' => 'Type de projet',
-        'add_new_item' => 'Ajouter un Type de Projet',
-        'new_item_name' => 'Nom du nouveau Projet',
-        'parent_item' => 'Type de projet parent',
+        "name" => "Types de projets",
+        "singular_name" => "Type de projet",
+        "add_new_item" => "Ajouter un Type de Projet",
+        "new_item_name" => "Nom du nouveau Projet",
+        "parent_item" => "Type de projet parent",
     ];
 
     $args = [
-        'labels' => $labels,
-        'public' => true,
-        'show_in_rest' => true,
-        'hierarchical' => true,
+        "labels" => $labels,
+        "public" => true,
+        "show_in_rest" => true,
+        "hierarchical" => true,
     ];
 
-    register_taxonomy('type-projets', 'portfolio', $args);
+    register_taxonomy("type-projets", "portfolio", $args);
 }
-add_action('init', 'capitaine_register_post_types');
+add_action("init", "capitaine_register_post_types");
 
 
 # Définir le contenu par défaut des publications du Portfolio
 # Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modeles-custom-post-types/#ajouter-un-contenu-par-defaut-a-votre-cpt
 function capitaine_add_default_content($content, $post)
 {
-    if ($post->post_type === 'portfolio') {
+    if ($post->post_type === "portfolio") {
         $content = '<!-- wp:pattern  { "slug":"hero-title" } /-->';
     }
     return $content;
 }
-add_filter('default_content', 'capitaine_add_default_content', 10, 2);
+add_filter("default_content", "capitaine_add_default_content", 10, 2);
 
 
 # Retirer des niveaux de titre dans les blocs de type Heading
 # Dans : https://capitainewp.io/formations/wordpress-full-site-editing/retirer-des-niveaux-de-titre-dans-le-bloc-titre/#retirer-les-niveaux-de-titres
 function capitaine_remove_heading_levels($args, $block_type)
 {
-    if ($block_type !== 'core/heading') {
+    if ($block_type !== "core/heading") {
         return $args;
     }
 
-    $args['attributes']['levelOptions']['default'] = [1, 2, 3, 4];
+    $args["attributes"]["levelOptions"]["default"] = [1, 2, 3, 4];
 
     return $args;
 }
-add_action('register_block_type_args', 'capitaine_remove_heading_levels', 10, 2);
+add_action("register_block_type_args", "capitaine_remove_heading_levels", 10, 2);
 
 
 # Déclarer les meta pour le bloc binding
@@ -271,33 +274,33 @@ add_action('register_block_type_args', 'capitaine_remove_heading_levels', 10, 2)
 function capitaine_register_meta()
 {
     register_meta(
-        'post',
-        'distance',
+        "post",
+        "distance",
         [
-            'show_in_rest'      => true,
-            'single'            => true,
-            'type'              => 'string',
-            'sanitize_callback' => 'wp_strip_all_tags',
-            'default'           => '{16 km}',
-            'label'             => 'Distance',
+            "show_in_rest"      => true,
+            "single"            => true,
+            "type"              => "string",
+            "sanitize_callback" => "wp_strip_all_tags",
+            "default"           => "{16 km}",
+            "label"             => "Distance",
         ]
     );
 
     register_meta(
-        'post',
-        'elevation',
+        "post",
+        "elevation",
         [
-            'show_in_rest'      => true,
-            'single'            => true,
-            'type'              => 'string',
-            'sanitize_callback' => 'wp_strip_all_tags',
-            'default'           => '{400 D+}',
-            'label'             => 'Dénivelé',
+            "show_in_rest"      => true,
+            "single"            => true,
+            "type"              => "string",
+            "sanitize_callback" => "wp_strip_all_tags",
+            "default"           => "{400 D+}",
+            "label"             => "Dénivelé",
         ]
     );
 }
 
-add_action('init', 'capitaine_register_meta');
+add_action("init", "capitaine_register_meta");
 
 
 # Déclarer des sources de données personnalisées pour le block binding
@@ -305,22 +308,22 @@ add_action('init', 'capitaine_register_meta');
 function capitaine_register_binding_sources()
 {
     register_block_bindings_source(
-        'capitaine/comments-number',
+        "capitaine/comments-number",
         [
-            'label' => __('Nombre de commentaires', 'capitaine'),
-            'get_value_callback' => 'capitaine_comments_binding'
+            "label" => __("Nombre de commentaires", "capitaine"),
+            "get_value_callback" => "capitaine_comments_binding"
         ]
     );
 
     register_block_bindings_source(
-        'capitaine/permalink',
+        "capitaine/permalink",
         [
-            'label' => __('Lien vers la publication', 'capitaine'),
-            'get_value_callback' => 'capitaine_permalink_binding'
+            "label" => __("Lien vers la publication", "capitaine"),
+            "get_value_callback" => "capitaine_permalink_binding"
         ]
     );
 }
-add_action('init', 'capitaine_register_binding_sources');
+add_action("init", "capitaine_register_binding_sources");
 
 
 # Callbacks pour le block binding
@@ -341,4 +344,4 @@ function register_acf_blocks()
 {
     register_block_type(__DIR__ . "/blocks/example");
 }
-add_action('init', 'register_acf_blocks');
+add_action("init", "register_acf_blocks");
