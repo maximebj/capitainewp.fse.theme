@@ -179,10 +179,10 @@ add_filter("body_class", "capitaine_body_class");
 
 
 # Modifier les paramètes d'une boucle de requête pour faire une liste Related Posts par exemple
-# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modifier-parametres-boucles-requetes-php/#modifier-une-boucle-de-requete-secondaire
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modifier-parametres-boucles-requetes-php/#une-boucle-personnalisee-related-posts
 function capitaine_related_posts_query( $query_args, $block)
 {
-    if ( $block->context["queryId"] === 3 ) {        
+    if ($block->context["queryId"] === 3) {        
         $current_post_id = get_the_ID();
         $current_post_categories = wp_get_post_categories($current_post_id, ["fields" => "ids"]);
 
