@@ -247,7 +247,7 @@ add_action("init", "capitaine_register_post_types");
 function capitaine_add_default_content($content, $post)
 {
     if ($post->post_type === "portfolio") {
-        $content = '<!-- wp:pattern  { "slug":"hero-title" } /-->';
+        $content = '<!-- wp:pattern  { "slug":"default-portfolio" } /-->';
     }
     return $content;
 }
