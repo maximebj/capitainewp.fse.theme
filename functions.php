@@ -345,3 +345,52 @@ function register_acf_blocks()
     register_block_type(__DIR__ . "/blocks/example");
 }
 add_action("init", "register_acf_blocks");
+
+
+# Créer un rôle utilisateur « Client »
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/hooker-le-theme-json-en-php/#creer-un-role-utilisateur-qui-na-pas-acces-a-lediteur-de-site
+function capitaine_add_client_role()
+{
+    # Ne pas déclarer le rôle à chaque exécution
+    if (get_role("client")) {
+        return;
+    }
+
+    # Définir les droits d'accès
+    $capabilities = [
+        # Lecture des contenus
+        "read" => true,
+        
+        # Pages
+        "edit_pages" => true,
+        "edit_published_pages" => true,
+        "publish_pages" => true,
+        "delete_pages" => true,
+        "delete_published_pages" => true,
+
+        # Publications
+        "edit_posts" => true,
+        "delete_posts" => true,
+        "publish_posts" => true,
+        "upload_files" => true,
+        "edit_published_posts" => true,
+        "delete_published_posts" => true,
+        
+        # Plugins
+        "install_plugins" => false,
+        "activate_plugins" => false,
+        "update_plugins" => false,
+        "delete_plugins" => false,
+        "edit_plugins" => false,
+        
+        # Options de WordPress et des plugins
+        "manage_options" => true,
+
+        # Thème
+        "edit_theme_options" => false,
+    ];
+
+	# Ajouter le rôle
+    add_role("client", "Client / Cliente", $capabilities);
+}
+add_action("init", "capitaine_add_client_role");
