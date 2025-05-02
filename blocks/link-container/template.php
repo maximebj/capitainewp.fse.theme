@@ -8,5 +8,5 @@ $link = get_the_permalink($current_post_id);
 
 ?>
 <a <?php echo $attributes; ?> href="<?php echo $link; ?>">
-  <InnerBlocks />
+    <InnerBlocks />
 </a>

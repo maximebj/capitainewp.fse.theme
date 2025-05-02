@@ -1,34 +1,34 @@
 .plugin {
-  display: flex;
-  margin: 2em 0;
-  border: 2px solid #ebebeb;
+    display: flex;
+    margin: 2em 0;
+    border: 2px solid #ebebeb;
 }
 
 .plugin__icon {
-  max-width: 260px;
+    max-width: 260px;
 }
 
 .plugin__icon img {
-  display: block;
+    display: block;
 }
 
 .plugin__content {
-  flex: 1;
-  padding: 20px;
+    flex: 1;
+    padding: 20px;
 }
 
 .plugin__title {
-  margin-top: 0;
-  font-weight: bold;
+    margin-top: 0;
+    font-weight: bold;
 }
 
 .plugin__description {
-  font-size: 0.9em;
+    font-size: 0.9em;
 }
 
 .plugin__link {
-  text-decoration: none;
-  color: white;
-  padding: 10px 20px;
-  margin-bottom: 0;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 0;
 }
