@@ -51,6 +51,15 @@ function capitaine_allow_file_types($types, $file, $filename, $mimes)
 add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
 
 
+# Export JSON des champs ACF
+function capitaine_acf_export_json($path)
+{
+  $path = get_stylesheet_directory() . '/acf-json';
+  return $path;
+}
+add_filter('acf/settings/save_json', 'capitaine_acf_export_json');
+
+
 # Charger les styles de blocs personnalisés
 # Dans https://capitainewp.io/formations/wordpress-full-site-editing/surcharger-css-blocs-natifs/#automatiser-le-chargement-des-feuilles-de-styles
 function capitaine_register_blocks_assets()

@@ -1,0 +1,49 @@
+{
+    "key": "group_5ec78be8690d4",
+    "title": "Bloc Gutenberg : Recette",
+    "fields": [
+        {
+            "key": "field_5ec7ae51c6da7",
+            "label": "Recette",
+            "name": "recipe",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "capitaine\/recipe"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Champs pour le bloc Gutenberg de la recette",
+    "show_in_rest": 0,
+    "modified": 1746175006
+}
