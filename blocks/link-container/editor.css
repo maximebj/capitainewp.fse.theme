@@ -3,3 +3,8 @@
   padding: 5px;
   border-radius: 5px;
 }
+
+.wp-block-capitaine-link-container * {
+    text-decoration: none !important;
+    color: inherit !important;
+}
