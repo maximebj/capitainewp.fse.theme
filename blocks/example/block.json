@@ -9,12 +9,12 @@
     "supports": {
         "align": ["wide", "full"],
         "color": {
-        "background": true,
-        "text": true
+            "background": true,
+            "text": true
         },
         "spacing": {
-        "padding": true,
-        "margin": true
+            "padding": true,
+            "margin": true
         },
         "html": false
     },
