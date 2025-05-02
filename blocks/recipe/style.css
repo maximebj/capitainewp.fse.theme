@@ -14,11 +14,3 @@
   font-size: 1.2em;
   font-weight: bold;
 }
-
-.recipe em {
-  display: block;
-  text-align: center;
-  font-style: italic;
-  color: #999;
-  margin: 1em 0;
-}
