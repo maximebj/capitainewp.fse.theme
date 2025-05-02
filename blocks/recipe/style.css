@@ -1,0 +1,24 @@
+.recipe {
+  margin: 2em auto;
+  max-width: 450px;
+  border: 2px solid #ebebeb;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.recipe__content {
+  padding: 20px;
+}
+
+.recipe__title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.recipe em {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  margin: 1em 0;
+}

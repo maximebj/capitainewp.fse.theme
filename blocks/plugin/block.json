@@ -1,0 +1,14 @@
+{
+  "name": "capitaine/plugin",
+  "title": "Extension",
+  "description": "Présentation d'une extension WordPress.",
+  "category": "media",
+  "keywords": ["extension", "plugin", "add-on"],
+  "icon": "admin-plugins",
+  "style": ["file:./style.css"],
+  "editorStyle": ["file:./editor.css"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php"
+  }
+}

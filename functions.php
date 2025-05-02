@@ -344,6 +344,8 @@ function capitaine_permalink_binding($source_attrs, $block_instance, $attribute_
 function register_acf_blocks()
 {
     register_block_type(__DIR__ . "/blocks/example");
+    register_block_type(__DIR__ . "/blocks/plugin");
+    register_block_type(__DIR__ . "/blocks/recipe");
     register_block_type(__DIR__ . "/blocks/link-container");
 }
 add_action("init", "register_acf_blocks");
