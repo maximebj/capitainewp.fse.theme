@@ -54,8 +54,8 @@ add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
 # Export JSON des champs ACF
 function capitaine_acf_export_json($path)
 {
-  $path = get_stylesheet_directory() . '/acf-json';
-  return $path;
+    $path = get_stylesheet_directory() . '/acf-json';
+    return $path;
 }
 add_filter('acf/settings/save_json', 'capitaine_acf_export_json');
 
@@ -192,7 +192,7 @@ add_filter("body_class", "capitaine_body_class");
 # Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modifier-parametres-boucles-requetes-php/#une-boucle-personnalisee-related-posts
 function capitaine_related_posts_query($query_args, $block)
 {
-    if ($block->context["queryId"] === 3) {        
+    if ($block->context["queryId"] === 3) {
         $current_post_id = get_the_ID();
         $current_post_categories = wp_get_post_categories($current_post_id, ["fields" => "ids"]);
 
@@ -373,10 +373,12 @@ function capitaine_add_client_role()
     $capabilities = [
         # Lecture des contenus
         "read" => true,
-        
+
         # Pages
         "edit_pages" => true,
         "edit_published_pages" => true,
+        "edit_others_pages" => true,
+        "edit_others_posts" => true,
         "publish_pages" => true,
         "delete_pages" => true,
         "delete_published_pages" => true,
@@ -388,14 +390,14 @@ function capitaine_add_client_role()
         "upload_files" => true,
         "edit_published_posts" => true,
         "delete_published_posts" => true,
-        
+
         # Plugins
         "install_plugins" => false,
         "activate_plugins" => false,
         "update_plugins" => false,
         "delete_plugins" => false,
         "edit_plugins" => false,
-        
+
         # Options de WordPress et des plugins
         "manage_options" => true,
 
@@ -403,7 +405,7 @@ function capitaine_add_client_role()
         "edit_theme_options" => false,
     ];
 
-	# Ajouter le rôle
+    # Ajouter le rôle
     add_role("client", "Client / Cliente", $capabilities);
 }
 add_action("init", "capitaine_add_client_role");
