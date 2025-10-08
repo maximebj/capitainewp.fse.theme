@@ -401,7 +401,17 @@ function capitaine_add_client_role()
         # Options de WordPress et des plugins
         "manage_options" => true,
 
+        # Manage users
+        "create_users" => true,
+        "delete_users" => false,
+        "edit_users" => false,
+
+        # Autres
+        "edit_files" => false,
+
         # Thème
+        "switch_themes" => false,
+        "edit_themes" => false,
         "edit_theme_options" => false,
     ];
 
