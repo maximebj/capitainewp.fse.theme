@@ -1,0 +1,6 @@
+---
+globs: theme.json
+alwaysApply: false
+---
+
+Always check the schema https://schemas.wp.org/trunk/theme.json prior to add properties
