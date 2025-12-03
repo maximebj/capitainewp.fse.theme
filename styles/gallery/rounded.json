@@ -8,7 +8,7 @@
         "blocks": {
             "core/image": {
                 "border": {
-                    "radius": "var:custom|radius|m"
+                    "radius": "var:preset|border-radius|m"
                 }
             }
         }

@@ -6,7 +6,7 @@
     "blockTypes": ["core/image"],
     "styles": {
         "border": {
-            "radius": "var:custom|radius|m"
+            "radius": "var:preset|border-radius|m"
         }
     }
 }

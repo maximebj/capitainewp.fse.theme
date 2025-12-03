@@ -7,7 +7,7 @@
         "layout": {
             "contentSize": "760px",
             "wideSize": "1140px",
-            "allowCustomContentAndWideSize": true,
+            "allowCustomContentAndWideSize": false,
             "allowEditing": true
         },
         "color": {
@@ -143,7 +143,7 @@
 
             "customFontSize": false,
             "defaultFontSizes": false,
-            "fluid": true,
+            "fluid": false,
             "fontSizes": [
                 {
                     "name": "Petit",
@@ -216,11 +216,33 @@
             ]
         },
         "border": {
-            "color": false,
-            "width": false,
-            "style": false,
+            "color": true,
+            "width": true,
+            "style": true,
 
-            "radius": true
+            "radius": true,
+            "radiusSizes": [
+                {
+                    "name": "Très petit",
+                    "slug": "xs",
+                    "size": "4px"
+                },
+                {
+                    "name": "Petit",
+                    "slug": "s",
+                    "size": "10px"
+                },
+                {
+                    "name": "Moyen",
+                    "slug": "m",
+                    "size": "20px"
+                },
+                {
+                    "name": "Rond",
+                    "slug": "full",
+                    "size": "999px"
+                }
+            ]
         },
         "background": {
             "backgroundImage": true,
@@ -270,7 +292,7 @@
             ]
         },
         "position": {
-            "sticky": false
+            "sticky": true
         },
         "custom": {
             "fontWeight": {
@@ -283,12 +305,6 @@
                 "narrow": 1.2,
                 "regular": 1.5,
                 "large": 1.8
-            },
-            "radius": {
-                "s": "4px",
-                "m": "10px",
-                "l": "20px",
-                "full": "999px"
             },
             "color": {
                 "secondaryHover": "#F4014E",
@@ -305,7 +321,7 @@
             },
             "core/image": {
                 "lightbox": {
-                    "enabled": false,
+                    "enabled": true,
                     "allowEditing": true
                 }
             }
@@ -334,7 +350,7 @@
         "elements": {
             "button": {
                 "border": {
-                    "radius": "var:custom|radius|s",
+                    "radius": "var:preset|border-radius|s",
                     "width": "0"
                 },
                 "color": {
@@ -350,7 +366,6 @@
                     }
                 },
                 "typography": {
-                    "fontSize": "var:preset|font-size|m",
                     "fontWeight": "var:custom|font-weight|regular"
                 },
                 ":hover": {
