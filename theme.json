@@ -7,7 +7,7 @@
         "layout": {
             "contentSize": "760px",
             "wideSize": "1140px",
-            "allowCustomContentAndWideSize": false,
+            "allowCustomContentAndWideSize": true,
             "allowEditing": true
         },
         "color": {
@@ -143,7 +143,7 @@
 
             "customFontSize": false,
             "defaultFontSizes": false,
-            "fluid": false,
+            "fluid": true,
             "fontSizes": [
                 {
                     "name": "Petit",
@@ -438,6 +438,9 @@
             }
         },
         "blocks": {
+            "core/paragraph": {
+                "css": "&.has-background { padding: var(--wp--preset--spacing--s); }"
+            },
             "core/heading": {
                 "typography": {
                     "lineHeight": "var:custom|line-height|narrow"
