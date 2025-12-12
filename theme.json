@@ -441,17 +441,7 @@
             "core/paragraph": {
                 "css": "&.has-background { padding: var(--wp--preset--spacing--s); }"
             },
-            "core/heading": {
-                "typography": {
-                    "lineHeight": "var:custom|line-height|narrow"
-                }
-            },
             "core/buttons": {
-                "spacing": {
-                    "blockGap": "var:preset|spacing|s"
-                }
-            },
-            "core/group": {
                 "spacing": {
                     "blockGap": "var:preset|spacing|s"
                 }
