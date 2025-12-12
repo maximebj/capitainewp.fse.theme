@@ -32,8 +32,8 @@
                 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Prendre rendez-vous</a></div>
                 <!-- /wp:button -->
 
-                <!-- wp:button {"textColor":"white","className":"is-style-button-transparent","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"borderColor":"white"} -->
-                <div class="wp-block-button is-style-button-transparent"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-border-color has-white-border-color wp-element-button">Nos services</a></div>
+                <!-- wp:button {"textColor":"white","className":"is-style-button-transparent is-style-transparent","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"borderColor":"white"} -->
+                <div class="wp-block-button is-style-button-transparent is-style-transparent"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-border-color has-white-border-color wp-element-button">Nos services</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
