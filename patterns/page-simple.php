@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Title: Page simple
  * Slug: page-simple
@@ -12,5 +13,5 @@
  */
 ?>
 <!-- wp:pattern {"slug":"hero-title"} /-->
-<!-- wp:pattern {"slug":"posts-grid"} /-->
+<!-- wp:pattern {"slug":"posts-list"} /-->
 <!-- wp:pattern {"slug":"cards-social"} /-->
