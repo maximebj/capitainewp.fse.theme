@@ -38,7 +38,7 @@
           <!-- wp:post-excerpt {"moreText":"","showMoreOnNewLine":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} /-->
 
           <!-- wp:buttons -->
-          <div class="wp-block-buttons"><!-- wp:button {"metadata":{"bindings":{"url":{"source":"capitaine/permalink"}}}} -->
+          <div class="wp-block-buttons"><!-- wp:button {"metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}} -->
             <div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Lire la suite</a></div>
             <!-- /wp:button -->
           </div>
