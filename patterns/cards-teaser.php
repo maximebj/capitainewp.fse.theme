@@ -40,9 +40,12 @@
   <figure class="wp-block-image size-full is-style-rounded"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/phare.jpg" alt="Phare" style="aspect-ratio:1.7778;object-fit:cover" /></figure>
   <!-- /wp:image -->
 
-  <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <!-- /wp:paragraph -->
+  <!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <!-- /wp:paragraph -->
+  </div>
+  <!-- /wp:group -->
 
   <!-- wp:buttons {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"blockGap":{"top":"var:preset|spacing|s","left":"var:preset|spacing|xs"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
   <div class="wp-block-buttons"><!-- wp:button {"width":50} -->
