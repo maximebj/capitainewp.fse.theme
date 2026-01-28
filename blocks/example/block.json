@@ -16,10 +16,13 @@
             "padding": true,
             "margin": true
         },
+        "anchor": true,
         "html": false
     },
     "acf": {
+        "blockVersion": 3,
         "mode": "preview",
+        "autoInlineEditing": true,
         "renderTemplate": "template.php"
     }
 }

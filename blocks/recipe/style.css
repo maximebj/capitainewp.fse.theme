@@ -1,9 +1,15 @@
 .recipe {
   margin: 2em auto;
-  max-width: 450px;
   border: 2px solid #ebebeb;
   overflow: hidden;
   border-radius: 10px;
+}
+
+.recipe__image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
 }
 
 .recipe__content {

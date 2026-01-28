@@ -35,10 +35,11 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5ec78d9332dc3",
@@ -135,8 +136,13 @@
                 "id": ""
             },
             "default_value": "#63ABD4",
-            "enable_opacity": false,
-            "return_format": "string"
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1,
+            "show_custom_palette": 1,
+            "custom_palette_source": "themejson",
+            "show_color_wheel": 1,
+            "palette_colors": ""
         }
     ],
     "location": [
@@ -157,5 +163,6 @@
     "active": true,
     "description": "Champs pour le bloc Gutenberg du plugin",
     "show_in_rest": 0,
-    "modified": 1746175002
+    "display_title": "",
+    "modified": 1769615475
 }

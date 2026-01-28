@@ -1,21 +1,21 @@
-<?php 
-  $recipe = get_field( 'recipe' );
-  $attributes = get_block_wrapper_attributes(['class' => 'recipe']);
+<?php
+$attributes = get_block_wrapper_attributes(['class' => 'recipe']);
+$recipe_id = get_field('recipe');
 
-  if( $recipe ): 
-?> 
-  <div <?php echo $attributes ?>>
+if ($recipe_id):
+?>
+  <div <?php echo wp_kses_data($attributes); ?>>
     <div class="recipe__image">
-      <?php echo get_the_post_thumbnail( $recipe, 'large' ); ?>
+      <?php echo get_the_post_thumbnail($recipe_id, 'large'); ?>
     </div>
     <div class="recipe__content">
-      <p class="recipe__title"><?php echo get_the_title( $recipe ); ?></p>
-      <p><?php echo get_the_excerpt( $recipe ); ?></p>
-      <p><a href="<?php echo get_the_permalink( $recipe ); ?>">Découvrir la recette</a></p>
+      <p class="recipe__title"><?php echo get_the_title($recipe_id); ?></p>
+      <p><?php echo get_the_excerpt($recipe_id); ?></p>
+      <p><a href="<?php echo get_the_permalink($recipe_id); ?>">Découvrir la recette</a></p>
     </div>
   </div>
-<?php elseif( is_admin() ): ?>
-  <div <?php echo $attributes ?>>
+<?php elseif (is_admin()): ?>
+  <div <?php echo wp_kses_data($attributes); ?>>
     <em>Choisissez une recette dans la colonne de droite.</em>
   </div>
 <?php endif; ?>

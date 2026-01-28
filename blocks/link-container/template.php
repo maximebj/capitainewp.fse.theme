@@ -1,12 +1,9 @@
 <?php
 # Récupérer les attributs du bloc
-$attributes = get_block_wrapper_attributes();
-
-# Récupérer les données du bloc
-$current_post_id = get_the_ID();
-$link = get_the_permalink($current_post_id);
-
+$attributes = get_block_wrapper_attributes([
+    "href" => get_the_permalink()
+]);
 ?>
-<a <?php echo $attributes; ?> href="<?php echo $link; ?>">
+<a <?php echo wp_kses_data($attributes); ?>>
     <InnerBlocks />
 </a>
