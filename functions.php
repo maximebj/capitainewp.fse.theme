@@ -10,9 +10,10 @@ add_filter("sanitize_file_name", "remove_accents");
 remove_action("enqueue_block_editor_assets", "wp_enqueue_editor_block_directory_assets");
 remove_theme_support("core-block-patterns");
 
-# Ajouter des fonctionnalités
+# Ajouter des styles dans l'éditeur
 add_theme_support("editor-styles");
-add_editor_style("style-editor.css");
+add_editor_style("style-editor.css"); # Styles pour corriger des soucis
+add_editor_style("style.css"); # Charger la feuille de style du thème pour avoir les spécificités
 
 
 # Déclarer les scripts et les styles
