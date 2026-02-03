@@ -44,13 +44,18 @@
             ],
             "duotone": [
                 {
+                    "name": "Black and white",
+                    "slug": "black-and-white",
+                    "colors": ["#000000", "#FFFFFF"]
+                },
+                {
                     "name": "Blue",
                     "slug": "blue",
                     "colors": ["#462CFF", "#ECE8FF"]
                 },
                 {
                     "name": "Pink",
-                    "slug": "Pink",
+                    "slug": "pink",
                     "colors": ["#F22AAA", "#FFDBF0"]
                 },
                 {
@@ -420,11 +425,6 @@
             "h5": {
                 "typography": {
                     "fontSize": "var:preset|font-size|s"
-                }
-            },
-            "h6": {
-                "typography": {
-                    "fontSize": "var:preset|font-size|small"
                 }
             },
             "link": {
