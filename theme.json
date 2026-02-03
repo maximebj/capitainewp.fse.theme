@@ -449,18 +449,16 @@
         },
         "blocks": {
             "core/paragraph": {
-                "css": "&.has-background { padding: var(--wp--preset--spacing--40); }"
+                "css": "&.has-background { padding: var(--wp--preset--spacing--30); }"
             },
             "core/buttons": {
                 "spacing": {
-                    "blockGap": "var:preset|spacing|40"
+                    "blockGap": "var:preset|spacing|30"
                 }
             },
-            "core/template-part": {
+            "core/social-links": {
                 "spacing": {
-                    "margin": {
-                        "top": "0px !important"
-                    }
+                    "blockGap": "var:preset|spacing|30"
                 }
             }
         }
