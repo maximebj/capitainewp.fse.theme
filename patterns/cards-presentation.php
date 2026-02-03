@@ -12,8 +12,8 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"categories":["cards","marketing","hero"],"patternName":"cards-presentation","name":"Hero"},"align":"wide","className":"is-style-rounded","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"padding":{"right":"var:preset|spacing|m","left":"var:preset|spacing|m","top":"var:preset|spacing|m","bottom":"var:preset|spacing|m"}},"border":{"radius":"20px"}},"backgroundColor":"primary","textColor":"white","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide is-style-rounded has-white-color has-primary-background-color has-text-color has-background has-link-color" style="border-radius:20px;padding-top:var(--wp--preset--spacing--m);padding-right:var(--wp--preset--spacing--m);padding-bottom:var(--wp--preset--spacing--m);padding-left:var(--wp--preset--spacing--m)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|m","left":"var:preset|spacing|m"}}}} -->
+<!-- wp:group {"metadata":{"categories":["cards","marketing","hero"],"patternName":"cards-presentation","name":"Hero"},"align":"wide","className":"is-style-rounded","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50","top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}},"border":{"radius":"20px"}},"backgroundColor":"primary","textColor":"white","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide is-style-rounded has-white-color has-primary-background-color has-text-color has-background has-link-color" style="border-radius:20px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
     <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
         <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
             <p class="has-secondary-color has-text-color has-link-color">Besoin d’un site Internet&nbsp;?</p>
@@ -38,8 +38,8 @@
             </div>
             <!-- /wp:buttons -->
 
-            <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|s","bottom":"var:preset|spacing|s"}}},"backgroundColor":"contrast"} -->
-            <hr class="wp-block-separator has-text-color has-contrast-color has-alpha-channel-opacity has-contrast-background-color has-background" style="margin-top:var(--wp--preset--spacing--s);margin-bottom:var(--wp--preset--spacing--s)" />
+            <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"backgroundColor":"contrast"} -->
+            <hr class="wp-block-separator has-text-color has-contrast-color has-alpha-channel-opacity has-contrast-background-color has-background" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)" />
             <!-- /wp:separator -->
 
             <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
@@ -47,7 +47,7 @@
                 <p>Retrouvez-nous sur les réseaux&nbsp;:</p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#5F4D6F","iconBackgroundColor":"white","iconBackgroundColorValue":"#FFFFFF","openInNewTab":true,"className":"is-style-default","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|xs"}}}} -->
+                <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#5F4D6F","iconBackgroundColor":"white","iconBackgroundColorValue":"#FFFFFF","openInNewTab":true,"className":"is-style-default","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
                 <ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default"><!-- wp:social-link {"url":"#","service":"instagram"} /-->
 
                     <!-- wp:social-link {"url":"#","service":"dribbble"} /-->

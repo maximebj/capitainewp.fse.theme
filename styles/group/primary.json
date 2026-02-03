@@ -11,8 +11,8 @@
         },
         "spacing": {
             "padding": {
-                "top": "var:preset|spacing|xl",
-                "bottom": "var:preset|spacing|xl"
+                "top": "var:preset|spacing|80",
+                "bottom": "var:preset|spacing|80"
             }
         },
         "blocks": {

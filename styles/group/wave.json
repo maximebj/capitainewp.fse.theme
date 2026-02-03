@@ -11,7 +11,7 @@
         },
         "spacing": {
             "margin": {
-                "bottom": "var:preset|spacing|xl"
+                "bottom": "var:preset|spacing|80"
             }
         },
         "elements": {

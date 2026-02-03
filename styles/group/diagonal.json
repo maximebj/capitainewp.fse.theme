@@ -11,12 +11,12 @@
         },
         "spacing": {
             "padding": {
-                "top": "var:preset|spacing|l",
-                "bottom": "var:preset|spacing|l"
+                "top": "var:preset|spacing|60",
+                "bottom": "var:preset|spacing|60"
             },
             "margin": {
-                "top": "var:preset|spacing|l",
-                "bottom": "var:preset|spacing|l"
+                "top": "var:preset|spacing|60",
+                "bottom": "var:preset|spacing|60"
             }
         }
     }

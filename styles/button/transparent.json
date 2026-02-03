@@ -16,8 +16,8 @@
         },
         "spacing": {
             "padding": {
-                "top": "calc(var(--wp--preset--spacing--xs) - 2px)",
-                "bottom": "calc(var(--wp--preset--spacing--xs) - 2px)"
+                "top": "calc(var(--wp--preset--spacing--30) - 2px)",
+                "bottom": "calc(var(--wp--preset--spacing--30) - 2px)"
             }
         }
     }
