@@ -3,7 +3,7 @@
     "version": 3,
     "title": "Arrondi",
     "slug": "rounded",
-    "blockTypes": ["core/image"],
+    "blockTypes": ["core/image", "core/post-featured-image"],
     "styles": {
         "border": {
             "radius": "var:preset|border-radius|m"
