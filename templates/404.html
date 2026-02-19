@@ -1,37 +1,29 @@
-<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"capitainewp-fse","area":"header"} /-->
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-top: var(--wp--preset--spacing--60);
-        padding-bottom: var(--wp--preset--spacing--60);
-    ">
-    <!-- wp:heading {"textAlign":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
-    <h2 class="wp-block-heading has-text-align-center has-secondary-color has-text-color has-link-color">
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+    <!-- wp:heading {"textAlign":"center","level":1} -->
+    <h1 class="wp-block-heading has-text-align-center">
         La page n’existe pas !
-    </h2>
+    </h1>
     <!-- /wp:heading -->
 
     <!-- wp:paragraph {"align":"center"} -->
     <p class="has-text-align-center">
-        On dirait que cette page n'existe pas,<br />mais ne laissez pas cela
+        On dirait que cette page n'existe pas,<br>mais ne laissez pas cela
         vous arrêter.
     </p>
     <!-- /wp:paragraph -->
 
     <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-    <div class="wp-block-buttons">
-        <!-- wp:button {"textAlign":"left","backgroundColor":"primary"} -->
-        <div class="wp-block-button">
-            <a
-                class="wp-block-button__link has-primary-background-color has-background has-text-align-left wp-element-button">Retour
-                à la page d'accueil</a>
-        </div>
+    <div class="wp-block-buttons"><!-- wp:button {"textAlign":"left"} -->
+        <div class="wp-block-button"><a class="wp-block-button__link has-text-align-left wp-element-button">Retour
+                à la page d'accueil</a></div>
         <!-- /wp:button -->
     </div>
     <!-- /wp:buttons -->
-</div>
+</main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"capitainewp-fse"} /-->
