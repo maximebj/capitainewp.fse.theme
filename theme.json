@@ -499,6 +499,11 @@
             "area": "",
             "name": "newsletter",
             "title": "Inscription à la newsletter"
+        },
+        {
+            "area": "menu",
+            "name": "menu-formations",
+            "title": "Menu des formations"
         }
     ]
 }
