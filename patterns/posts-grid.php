@@ -6,7 +6,7 @@
  * Description: La liste des articles du blog en grille
  * Categories: posts
  * Keywords: blog, posts, query, loop
- * Viewport Width: 1200
+ * Viewport Width: 900
  * Block Types: core/query
  * Post Types: 
  * Inserter: true
@@ -20,8 +20,8 @@
   <!-- wp:query {"queryId":29,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]},"align":"wide"} -->
   <div class="wp-block-query alignwide"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"300px"}} -->
     <!-- wp:group {"style":{"spacing":{"blockGap":"0"},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-    <div class="wp-block-group" style="min-height:100%"><!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#FFF","isUserOverlayColor":false,"minHeight":200,"contentPosition":"top left","isDark":false,"style":{"border":{"radius":{"topLeft":"20px","topRight":"20px"}},"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":""}} -->
-      <div class="wp-block-cover is-light has-custom-content-position is-position-top-left" style="border-top-left-radius:20px;border-top-right-radius:20px;margin-top:0;margin-bottom:0;min-height:200px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#FFF"></span>
+    <div class="wp-block-group" style="min-height:100%"><!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#aaaba9","isUserOverlayColor":false,"minHeight":200,"contentPosition":"top left","isDark":false,"style":{"border":{"radius":{"topLeft":"20px","topRight":"20px"}},"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":""}} -->
+      <div class="wp-block-cover is-light has-custom-content-position is-position-top-left" style="border-top-left-radius:20px;border-top-right-radius:20px;margin-top:0;margin-bottom:0;min-height:200px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#aaaba9"></span>
         <div class="wp-block-cover__inner-container"><!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}},"border":{"radius":"10px"}},"backgroundColor":"accent","textColor":"base","fontSize":"s"} /--></div>
       </div>
       <!-- /wp:cover -->
@@ -34,8 +34,8 @@
         <!-- wp:post-excerpt {"moreText":"","showMoreOnNewLine":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"layout":{"selfStretch":"fill","flexSize":null}},"textColor":"contrast"} /-->
 
         <!-- wp:buttons -->
-        <div class="wp-block-buttons"><!-- wp:button {"className":"has-custom-width wp-block-button__width-100"} -->
-          <div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button">Lire la suite</a></div>
+        <div class="wp-block-buttons"><!-- wp:button {"className":"has-custom-width wp-block-button__width-100","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
+          <div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button" style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">Lire la suite</a></div>
           <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->

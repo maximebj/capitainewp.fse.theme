@@ -6,7 +6,7 @@
  * Description: Une page contenant plusieurs compositions
  * Categories: pages
  * Keywords: page
- * Viewport Width: 1600
+ * Viewport Width: 1200
  * Block Types: core/post-content
  * Post Types: page, wp_template
  * Inserter: true
