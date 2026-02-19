@@ -10,6 +10,10 @@
             "text": "var:preset|color|base"
         },
         "spacing": {
+            "padding": {
+                "top": "var:preset|spacing|80",
+                "bottom": "var:preset|spacing|60"
+            },
             "margin": {
                 "bottom": "var:preset|spacing|80"
             }
