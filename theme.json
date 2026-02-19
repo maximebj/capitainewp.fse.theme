@@ -460,6 +460,15 @@
                 "spacing": {
                     "blockGap": "var:preset|spacing|30"
                 }
+            },
+            "core/post-terms": {
+                "elements": {
+                    "link": {
+                        "typography": {
+                            "textDecoration": "none"
+                        }
+                    }
+                }
             }
         }
     },
