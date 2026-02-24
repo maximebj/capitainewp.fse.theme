@@ -92,9 +92,9 @@ function capitaine_deregister_blocks_variations()
     wp_enqueue_script(
         "unregister-styles",
         get_template_directory_uri() . "/assets/js/unregister-blocks-styles.js",
-        ["wp-blocks", "wp-dom-ready", "wp-edit-post"],
+        ["wp-blocks", "wp-dom-ready"],
         "1.0",
-        true // Important pour que ça fonctionne dans le FSE et Gut
+        true
     );
 }
 add_action("enqueue_block_editor_assets", "capitaine_deregister_blocks_variations");

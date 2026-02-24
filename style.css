@@ -27,3 +27,8 @@ Text Domain: capitaine
 footer.wp-block-template-part {
     margin-top: 0 !important;
 }
+
+/* Retirer le margin-top du main */
+main.wp-block-group {
+    margin-top: 0 !important;
+}

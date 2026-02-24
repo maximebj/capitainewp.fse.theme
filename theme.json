@@ -92,7 +92,7 @@
                 },
                 {
                     "name": "Gris",
-                    "slug": "gray",
+                    "slug": "neutral",
                     "color": "#F9F7F3"
                 }
             ]
@@ -163,7 +163,8 @@
                 {
                     "name": "Petit",
                     "slug": "s",
-                    "size": "0.88rem"
+                    "size": "0.88rem",
+                    "fluid": false
                 },
                 {
                     "name": "Moyen",
@@ -183,7 +184,11 @@
                 {
                     "name": "Énorme",
                     "slug": "xxl",
-                    "size": "4rem"
+                    "size": "4rem",
+                    "fluid": {
+                        "min": "2.6rem",
+                        "max": "4rem"
+                    }
                 }
             ],
 
@@ -319,7 +324,7 @@
             "lineHeight": {
                 "narrow": 1.2,
                 "regular": 1.5,
-                "large": 1.8
+                "loose": 1.8
             },
             "color": {
                 "secondaryHover": "#F4014E",
