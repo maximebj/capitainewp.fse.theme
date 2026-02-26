@@ -12,8 +12,8 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"categories":[],"patternName":"core/block/1018","name":"Grille"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"backgroundColor":"gray","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-gray-background-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:heading {"textAlign":"center"} -->
+<!-- wp:group {"metadata":{"categories":[],"patternName":"core/block/1018","name":"Grille"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"backgroundColor":"neutral","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-neutral-background-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:heading {"textAlign":"center"} -->
   <h2 class="wp-block-heading has-text-align-center">Mes dernières actualités</h2>
   <!-- /wp:heading -->
 
