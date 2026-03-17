@@ -17,14 +17,12 @@
             "caption": true,
             "button": true,
             "heading": true,
-
             "custom": false,
             "customDuotone": false,
             "customGradient": false,
             "defaultPalette": false,
             "defaultDuotone": false,
             "defaultGradients": false,
-
             "gradients": [
                 {
                     "name": "Purple",
@@ -46,22 +44,34 @@
                 {
                     "name": "Black and white",
                     "slug": "black-and-white",
-                    "colors": ["#000000", "#FFFFFF"]
+                    "colors": [
+                        "#000000",
+                        "#FFFFFF"
+                    ]
                 },
                 {
                     "name": "Blue",
                     "slug": "blue",
-                    "colors": ["#462CFF", "#ECE8FF"]
+                    "colors": [
+                        "#462CFF",
+                        "#ECE8FF"
+                    ]
                 },
                 {
                     "name": "Pink",
                     "slug": "pink",
-                    "colors": ["#F22AAA", "#FFDBF0"]
+                    "colors": [
+                        "#F22AAA",
+                        "#FFDBF0"
+                    ]
                 },
                 {
                     "name": "Green",
                     "slug": "green",
-                    "colors": ["#196A64", "#E0FFFD"]
+                    "colors": [
+                        "#196A64",
+                        "#E0FFFD"
+                    ]
                 }
             ],
             "palette": [
@@ -101,9 +111,12 @@
             "margin": true,
             "padding": true,
             "blockGap": true,
-
-            "units": ["px", "rem", "vh", "%"],
-
+            "units": [
+                "px",
+                "rem",
+                "vh",
+                "%"
+            ],
             "customSpacingSize": false,
             "defaultSpacingSizes": false,
             "spacingSizes": [
@@ -155,7 +168,6 @@
             "textDecoration": false,
             "textTransform": true,
             "writingMode": false,
-
             "customFontSize": false,
             "defaultFontSizes": false,
             "fluid": true,
@@ -191,7 +203,6 @@
                     }
                 }
             ],
-
             "fontFamilies": [
                 {
                     "fontFamily": "'Open Sans', sans-serif",
@@ -204,7 +215,9 @@
                             "fontStyle": "normal",
                             "fontDisplay": "swap",
                             "fontWeight": "400",
-                            "src": ["file:./assets/fonts/open-sans-400.woff2"]
+                            "src": [
+                                "file:./assets/fonts/open-sans-400.woff2"
+                            ]
                         },
                         {
                             "fontFamily": "Open Sans",
@@ -212,7 +225,9 @@
                             "fontStyle": "normal",
                             "fontDisplay": "swap",
                             "fontWeight": "700",
-                            "src": ["file:./assets/fonts/open-sans-700.woff2"]
+                            "src": [
+                                "file:./assets/fonts/open-sans-700.woff2"
+                            ]
                         }
                     ]
                 },
@@ -239,7 +254,6 @@
             "color": true,
             "width": true,
             "style": true,
-
             "radius": true,
             "radiusSizes": [
                 {
@@ -290,7 +304,6 @@
         },
         "dimensions": {
             "minHeight": true,
-
             "aspectRatio": true,
             "defaultAspectRatios": false,
             "aspectRatios": [
@@ -336,7 +349,9 @@
         "blocks": {
             "core/column": {
                 "spacing": {
-                    "units": ["%"]
+                    "units": [
+                        "%"
+                    ]
                 }
             },
             "core/image": {
@@ -405,11 +420,6 @@
             "h1": {
                 "typography": {
                     "fontSize": "var:preset|font-size|xxl"
-                },
-                "spacing": {
-                    "margin": {
-                        "bottom": "var:preset|spacing|60"
-                    }
                 }
             },
             "h2": {
@@ -481,7 +491,9 @@
         {
             "name": "page-full-width",
             "title": "Page pleine largeur, sans titre",
-            "postTypes": ["page"]
+            "postTypes": [
+                "page"
+            ]
         }
     ],
     "templateParts": [
