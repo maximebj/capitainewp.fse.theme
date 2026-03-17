@@ -29,6 +29,7 @@ footer.wp-block-template-part {
 }
 
 /* Retirer le margin-top du main */
-main.wp-block-group {
+main.wp-block-group,
+main.wp-block-post-content {
     margin-top: 0 !important;
 }
