@@ -411,9 +411,10 @@ function capitaine_add_client_role()
 
         # Options de WordPress et des plugins
         "manage_options" => true,
+        "wpseo_manage_options" => true, // Si on veut lui donner accès uniquement aux options de Yoast SEO
 
         # Manage users
-        "create_users" => true,
+        "create_users" => false,
         "delete_users" => false,
         "edit_users" => false,
 
