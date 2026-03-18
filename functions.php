@@ -6,6 +6,16 @@
 # Retirer les accents des noms de fichiers
 add_filter("sanitize_file_name", "remove_accents");
 
+# Retirer le chargement des emojis
+remove_action("wp_head", "print_emoji_detection_script", 7);
+remove_action("admin_print_scripts", "print_emoji_detection_script");
+remove_action("wp_print_styles", "print_emoji_styles");
+remove_action("admin_print_styles", "print_emoji_styles");
+remove_filter("the_content_feed", "wp_staticize_emoji");
+remove_filter("comment_text_rss", "wp_staticize_emoji");
+remove_filter("wp_mail", "wp_staticize_emoji_for_email");
+
+
 # Retirer le pattern directory et la suggestion de blocs
 remove_action("enqueue_block_editor_assets", "wp_enqueue_editor_block_directory_assets");
 remove_theme_support("core-block-patterns");
