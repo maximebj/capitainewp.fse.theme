@@ -359,6 +359,12 @@
                     "enabled": true,
                     "allowEditing": true
                 }
+            },
+            "core/button": {
+                "color": {
+                    "text": false,
+                    "background": false
+                }
             }
         }
     },
