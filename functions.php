@@ -277,15 +277,19 @@ function capitaine_add_default_content($content, $post)
 add_filter("default_content", "capitaine_add_default_content", 10, 2);
 
 
-# Retirer des niveaux de titre dans les blocs de type Heading
+# Changer les paramètres par défaut des blocs
 # Dans : https://capitainewp.io/formations/wordpress-full-site-editing/retirer-des-niveaux-de-titre-dans-le-bloc-titre/#retirer-les-niveaux-de-titres
 function capitaine_remove_heading_levels($args, $block_type)
 {
-    if ($block_type !== "core/heading") {
-        return $args;
+    # Retirer les niveaux de titre dans les blocs de type Heading
+    if ($block_type === "core/heading") {
+        $args["attributes"]["levelOptions"]["default"] = [1, 2, 3, 4];
     }
 
-    $args["attributes"]["levelOptions"]["default"] = [1, 2, 3, 4];
+    # Mettre les images toujours en grande taille
+    if ($block_type === "core/image") {
+        $args["attributes"]["sizeSlug"]["default"] = "full";
+    }
 
     return $args;
 }
