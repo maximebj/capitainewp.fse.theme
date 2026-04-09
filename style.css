@@ -22,14 +22,3 @@ Text Domain: capitaine
         display: none;
     }
 }
-
-/* Retirer le margin-top du footer */
-footer.wp-block-template-part {
-    margin-top: 0 !important;
-}
-
-/* Retirer le margin-top du main */
-main.wp-block-group,
-main.wp-block-post-content {
-    margin-top: 0 !important;
-}
