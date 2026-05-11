@@ -37,31 +37,6 @@ function capitaine_register_assets()
 }
 add_action("wp_enqueue_scripts", "capitaine_register_assets");
 
-
-# Autoriser l'import de fichiers SVG et WebP
-function capitaine_allow_mime($mimes)
-{
-    $mimes["svg"] = "image/svg+xml";
-    $mimes["webp"] = "image/webp";
-
-    return $mimes;
-}
-add_filter("upload_mimes", "capitaine_allow_mime");
-
-
-# Autorisations supplémentaires pour le WebP
-function capitaine_allow_file_types($types, $file, $filename, $mimes)
-{
-    if (false !== strpos($filename, ".webp")) {
-        $types["ext"] = "webp";
-        $types["type"] = "image/webp";
-    }
-
-    return $types;
-}
-add_filter("wp_check_filetype_and_ext", "capitaine_allow_file_types", 10, 4);
-
-
 # Export JSON des champs ACF
 function capitaine_acf_export_json($path)
 {
