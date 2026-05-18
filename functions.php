@@ -239,6 +239,36 @@ function capitaine_register_post_types()
 }
 add_action("init", "capitaine_register_post_types");
 
+# Déclarer le nom pour nos templates de CPT
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modeles-custom-post-types/#donner-un-titre-et-une-description-a-vos-modeles
+function capitaine_register_templates()
+{
+    register_block_template(
+        basename(get_stylesheet_directory()) . '//archive-portfolio',
+        [
+            "title" => "Archive Portfolio",
+            "description" => "Modèle pour la page d'archive du Portfolio"
+        ]
+    );
+
+    register_block_template(
+        basename(get_stylesheet_directory()) . '//single-portfolio',
+        [
+            "title" => "Publication Portfolio",
+            "description" => "Modèle qui affiche une publication du Portfolio"
+        ]
+    );
+
+    register_block_template(
+        basename(get_stylesheet_directory()) . '//taxonomy-type-projets',
+        [
+            "title" => "Taxonomie Type de Projets",
+            "description" => "Archive par thématique du portfolio"
+        ]
+    );
+}
+add_action("init", "capitaine_register_templates");
+
 
 # Définir le contenu par défaut des publications du Portfolio
 # Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modeles-custom-post-types/#ajouter-un-contenu-par-defaut-a-votre-cpt
