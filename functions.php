@@ -442,3 +442,61 @@ function capitaine_add_client_role()
     add_role("client", "Client / Cliente", $capabilities);
 }
 add_action("init", "capitaine_add_client_role");
+
+
+# Déclarer un bloc uniquement en PHP
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/declarer-bloc-php-sans-acf/#declarer-un-bloc-en-php
+function capitaine_register_php_block() {
+    
+    register_block_type(
+        'capitainewp/php-block',
+        [
+            'title' => __( 'Mon bloc PHP', 'capitainewp' ),
+            'icon' => "carrot",
+            'category' => "text",
+            'attributes' => [
+                'title' => [
+                    'label' => __( 'Title', 'myplugin' ),
+                    'type' => 'string',
+                    'default' => 'Hello World',
+                ],
+                'count' => [
+                    'label' => __( 'Count', 'myplugin' ),
+                    'type' => 'integer',
+                    'default' => 5,
+                ],
+                'enabled' => [
+                    'label' => __( 'Enabled?', 'myplugin' ),
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
+                'size' => [
+                    'label' => __( 'Size', 'myplugin' ),
+                    'type' => 'string',
+                    'enum' => [ 'small', 'medium', 'large' ],
+                    'default' => 'medium',
+                ],
+            ],
+            'render_callback' => function ( $attributes ) {
+                return sprintf(
+                    __( '<p>%s: %d items (%s)</p>', 'myplugin' ),
+                    esc_html( $attributes['title'] ),
+                    $attributes['count'],
+                    $attributes['size']
+                );
+            },
+            'supports' => [
+                'autoRegister' => true, # C'est lui qui nous permet de nous affranchir de JS
+                'color' => [
+                    'background' => true,
+                    'text' => true,
+                ],
+                'spacing' => [
+                    'padding' => true,
+                ],
+                'align' => [ 'wide', 'full' ]
+            ],
+        ]
+    );
+}
+add_action( 'init', 'capitaine_register_php_block' );
