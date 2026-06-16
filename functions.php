@@ -194,21 +194,28 @@ function capitaine_related_posts_query($query_vars, $block_instance)
 }
 add_filter("query_loop_block_query_vars", "capitaine_related_posts_query", 10, 2);
 
-
-function capitaine_add_params_to_main_query($query)
+# Modifier les paramètres de la requête principale dans les pages d'archives
+# Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modifier-parametres-boucles-requetes-php/#modifier-la-boucle-de-requete-principale
+function capitaine_override_main_query($query)
 {
-    if (!is_home() || !$query->is_main_query()) {
+    if (!is_admin() || !is_home() || !$query->is_main_query()) {
         return $query;
     }
 
-    //var_dump($query); die;
+    # Nombre d'articles (mais modifiable directement depuis l'éditeur)
+    $wp_query->set('posts_per_page', 12);
+    
+    # Filtres sur des champs ACF
+    $wp_query->set('meta_key', 'note_acf');
+    $wp_query->set('meta_value_num', 15);
+    $wp_query->set('meta_compare', '>');
 
-    $query->set("offset", 1);
-    $query->set("ignore_sticky_posts", true);
+    # Filtrer par date
+    $wp_query->set('year', 2026);
 
     return $query;
 }
-//add_filter("pre_get_posts", "capitaine_add_params_to_main_query", 10, 2);
+//add_filter("pre_get_posts", "capitaine_override_main_query");
 
 
 # Déclarer un nouveau type de publication « Portfolio »
