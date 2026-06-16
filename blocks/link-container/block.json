@@ -7,6 +7,7 @@
     "category": "text",
     "icon": "admin-links",
     "acf": {
+        "blockVersion": 3,
         "mode": "preview",
         "renderTemplate": "template.php"
     }
