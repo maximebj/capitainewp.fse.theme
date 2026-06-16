@@ -25,6 +25,8 @@ add_theme_support("editor-styles");
 add_editor_style("style-editor.css"); # Styles pour corriger des soucis
 add_editor_style("style.css"); # Charger la feuille de style du thème pour avoir les spécificités
 
+# Déclarer la compatibilité avec le Datastore pour ACF (pour le bindings)
+add_filter( 'acf/settings/enable_datastore', '__return_true' );
 
 # Déclarer les scripts et les styles
 function capitaine_register_assets()
@@ -174,7 +176,7 @@ function capitaine_body_class($classes)
 add_filter("body_class", "capitaine_body_class");
 
 
-# Modifier les paramètes d'une boucle de requête pour faire une liste Related Posts par exemple
+# Modifier les paramètes d'une boucle de requête secondaire pour faire une liste Related Posts par exemple
 # Dans : https://capitainewp.io/formations/wordpress-full-site-editing/modifier-parametres-boucles-requetes-php/#une-boucle-personnalisee-related-posts
 function capitaine_related_posts_query($query_vars, $block_instance)
 {
@@ -191,6 +193,22 @@ function capitaine_related_posts_query($query_vars, $block_instance)
     return $query_vars;
 }
 add_filter("query_loop_block_query_vars", "capitaine_related_posts_query", 10, 2);
+
+
+function capitaine_add_params_to_main_query($query)
+{
+    if (!is_home() || !$query->is_main_query()) {
+        return $query;
+    }
+
+    //var_dump($query); die;
+
+    $query->set("offset", 1);
+    $query->set("ignore_sticky_posts", true);
+
+    return $query;
+}
+//add_filter("pre_get_posts", "capitaine_add_params_to_main_query", 10, 2);
 
 
 # Déclarer un nouveau type de publication « Portfolio »
@@ -448,9 +466,19 @@ add_action("init", "capitaine_add_client_role");
 # Dans : https://capitainewp.io/formations/wordpress-full-site-editing/declarer-bloc-php-sans-acf/#declarer-un-bloc-en-php
 function capitaine_register_php_block() {
     
+    # Déclaration du CSS
+    wp_register_style(
+        'php-block-styles',
+        plugins_url( 'blocks/php-only/style.css', __FILE__ ),
+        [],
+        '1.0.0'
+    );
+    
+    # Déclaration du bloc
     register_block_type(
         'capitainewp/php-block',
         [
+            'api_version' => 3,
             'title' => __( 'Mon bloc PHP', 'capitainewp' ),
             'icon' => "carrot",
             'category' => "text",
@@ -478,13 +506,11 @@ function capitaine_register_php_block() {
                 ],
             ],
             'render_callback' => function ( $attributes ) {
-                return sprintf(
-                    __( '<p>%s: %d items (%s)</p>', 'myplugin' ),
-                    esc_html( $attributes['title'] ),
-                    $attributes['count'],
-                    $attributes['size']
-                );
+                ob_start();
+                include __DIR__ . '/blocks/php-only/template.php';          
+                return ob_get_clean();
             },
+            'style_handles' => ['php-block-styles'],
             'supports' => [
                 'autoRegister' => true, # C'est lui qui nous permet de nous affranchir de JS
                 'color' => [
