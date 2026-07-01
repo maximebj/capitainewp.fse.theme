@@ -203,15 +203,15 @@ function capitaine_override_main_query($query)
     }
 
     # Nombre d'articles (mais modifiable directement depuis l'éditeur)
-    $wp_query->set('posts_per_page', 12);
+    $query->set('posts_per_page', 12);
     
     # Filtres sur des champs ACF
-    $wp_query->set('meta_key', 'note_acf');
-    $wp_query->set('meta_value_num', 15);
-    $wp_query->set('meta_compare', '>');
+    $query->set('meta_key', 'note_acf');
+    $query->set('meta_value_num', 15);
+    $query->set('meta_compare', '>');
 
     # Filtrer par date
-    $wp_query->set('year', 2026);
+    $query->set('year', 2026);
 
     return $query;
 }
